@@ -10,130 +10,123 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Arabic:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
 <style>
-:root{--bg:#050918;--surface:#0c1226;--line:#253047;--cyan:#02ccff;--blue:#000bfa;--white:#fff;--muted:#a5b1c9;--font:Arial,Helvetica,sans-serif}
-*{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:105px}body{margin:0;background:var(--bg);color:var(--white);font-family:var(--font);font-size:16px;line-height:1.5}a{color:inherit;text-decoration:none}button{font:inherit;cursor:pointer}a,button{-webkit-tap-highlight-color:transparent}a:focus-visible,button:focus-visible{outline:3px solid var(--cyan);outline-offset:6px}::selection{background:var(--cyan);color:var(--bg)}.wrap{width:min(1280px,calc(100% - 80px));margin:auto}.skip{position:fixed;top:-80px;left:20px;background:white;color:black;padding:12px;z-index:100}.skip:focus{top:12px}header{position:sticky;top:0;z-index:20;background:rgba(5,9,24,.94);backdrop-filter:blur(16px);border-bottom:1px solid var(--line)}.nav{min-height:88px;display:flex;align-items:center;justify-content:space-between;gap:30px}.wordmark{font-size:34px;font-weight:900;letter-spacing:-2.5px;line-height:1}.wordmark span{color:var(--cyan)}.navlinks{display:flex;gap:32px;color:var(--muted);font-size:14px}.navlinks a:hover{color:white}.language{background:transparent;border:1px solid var(--line);color:white;padding:9px 17px;border-radius:30px;min-height:44px}.language:hover{border-color:var(--cyan)}.hero{padding:70px 0 48px;position:relative;overflow:hidden}.hero-top{display:flex;align-items:center;gap:14px;font-size:12px;letter-spacing:3px;text-transform:uppercase;color:var(--cyan)}.hero-top:before{content:"";width:32px;height:1px;background:var(--cyan)}h1{font-size:clamp(56px,8.6vw,116px);line-height:.96;letter-spacing:-.075em;margin:30px 0;font-weight:900;max-width:900px}h1 em{font-style:normal;color:var(--cyan)}.hero-bottom{display:flex;align-items:end;justify-content:space-between;gap:24px}.hero-bottom p{color:var(--muted);max-width:390px;font-size:18px;margin:0}.browse{display:inline-flex;align-items:center;justify-content:space-between;gap:45px;padding:16px 0 12px;border-bottom:1px solid var(--cyan);font-size:15px}.browse span{color:var(--cyan);font-size:23px;transition:transform .2s}.browse:hover span{transform:translateY(4px)}.signal{height:78px;display:flex;align-items:center;gap:5px;margin-top:44px;overflow:hidden;mask-image:linear-gradient(90deg,transparent,#000 10%,#000 90%,transparent)}.signal i{flex:1;min-width:3px;height:var(--h);background:var(--cyan);opacity:var(--o);border-radius:2px;transition:height .35s}.section-nav{display:flex;gap:10px;overflow-x:auto;padding:4px 0 30px;scrollbar-width:thin}.section-nav a{white-space:nowrap;border:1px solid var(--line);border-radius:40px;padding:10px 20px;font-size:14px;min-height:44px}.section-nav a:first-child{background:white;border-color:white;color:var(--bg)}.section-nav a:hover{border-color:var(--cyan)}.section{padding:45px 0 30px;scroll-margin-top:100px}.section-heading{display:flex;align-items:center;gap:20px;margin-bottom:24px}.section-heading h2{font-size:34px;letter-spacing:-1.4px;margin:0}.section-heading span{font:12px monospace;color:var(--muted);border:1px solid var(--line);padding:3px 9px;border-radius:30px}.gaming-grid{display:grid;grid-template-columns:1.15fr 1fr;gap:20px}.card{position:relative;overflow:hidden;border:1px solid var(--line);border-radius:20px;background:var(--surface);padding:30px;display:flex;flex-direction:column;justify-content:space-between;min-height:280px}.console{grid-row:span 2;min-height:600px;background:var(--blue);border-color:var(--blue)}.card-top{display:flex;justify-content:space-between;gap:20px;align-items:center;font-size:12px;text-transform:uppercase;letter-spacing:2px}.card-top .number{opacity:.6;font:13px monospace;letter-spacing:0}.display-type{font-size:clamp(70px,10vw,148px);line-height:1;letter-spacing:-.09em;font-weight:900;align-self:center;margin:30px 0;color:white}.console .display-type{font-size:clamp(100px,14vw,200px);transform:rotate(-9deg);letter-spacing:-.08em}.console .display-caption{font-size:13px;letter-spacing:5px;align-self:center;color:#ccdaff;margin-top:-5px;margin-bottom:25px}.card h3{font-size:28px;letter-spacing:-.9px;line-height:1.2;margin:0 0 10px}.card p{color:var(--muted);margin:0;max-width:360px}.console p{color:#d9dfff}.card-bottom{display:flex;gap:15px;align-items:end;justify-content:space-between}.card-arrow{font-size:24px;color:var(--cyan)}.pc .display-type{font-size:78px;margin:15px 0;align-self:flex-end;color:var(--cyan)}.vip{background:#101a30}.vip .display-type{font-size:76px;margin:10px 0 16px;align-self:flex-end;-webkit-text-stroke:1px var(--cyan);color:transparent;letter-spacing:-.05em}.card:hover{border-color:#597599}.console:hover{border-color:var(--cyan)}.other-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}.experience{min-height:330px;padding:26px}.experience .symbol{font-size:64px;font-weight:900;letter-spacing:-.08em;line-height:1.2;margin:25px 0;color:var(--cyan)}.experience .symbol small{font-size:16px;letter-spacing:0}.experience h3{font-size:24px}.experience p{font-size:15px}.experience:nth-child(2){background:#101b2b}.experience:nth-child(3){background:#10222d}.closing{margin:64px 0 40px;border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:40px 0;display:flex;align-items:center;justify-content:space-between;gap:20px}.closing p{font-size:clamp(30px,4vw,54px);font-weight:800;letter-spacing:-2px;margin:0}.closing span{color:var(--cyan)}.closing a{width:50px;height:50px;display:grid;place-items:center;border:1px solid var(--line);border-radius:50%;font-size:24px;flex-shrink:0}.closing a:hover{background:var(--cyan);color:var(--bg)}footer{padding:0 0 36px;display:flex;justify-content:space-between;gap:20px;align-items:center}footer p{font-size:12px;color:var(--muted);margin:0}footer .wordmark{font-size:26px} [dir="rtl"]{font-family:Tahoma,Arial,sans-serif}[dir="rtl"] h1{letter-spacing:-.04em;line-height:1.2;font-size:clamp(48px,7vw,90px)}[dir="rtl"] h2,[dir="rtl"] h3,[dir="rtl"] .closing p{letter-spacing:0}[dir="rtl"] .wordmark,[dir="rtl"] .display-type,[dir="rtl"] .symbol{direction:ltr;font-family:Arial,sans-serif}[dir="rtl"] .hero-top,[dir="rtl"] .card-top{letter-spacing:0}
-@media(min-width:1000px){.hero{animation:arrive .6s ease-out both}@keyframes arrive{from{transform:translateY(14px)}to{transform:translateY(0)}}}
-@media(max-width:760px){.wrap{width:calc(100% - 36px)}.nav{min-height:72px;gap:15px}.wordmark{font-size:30px}.navlinks{gap:17px;font-size:13px}.hero{padding:45px 0 25px}.hero-top{font-size:11px;letter-spacing:2px}h1{font-size:clamp(53px,12vw,90px);margin:24px 0}.hero-bottom{align-items:start;flex-direction:column;gap:18px}.hero-bottom p{font-size:16px;max-width:310px}.browse{padding:9px 0;gap:45px}.signal{height:54px;margin-top:25px;gap:4px}.section-nav{padding-bottom:10px}.section-nav a{padding:10px 17px}.section{padding-top:30px}.section-heading h2{font-size:28px}.gaming-grid{grid-template-columns:1fr;gap:14px}.console{grid-row:auto;min-height:395px}.console .display-type{font-size:140px;margin:20px 0}.card{padding:23px}.card h3{font-size:25px}.pc,.vip{min-height:260px}.pc .display-type,.vip .display-type{font-size:68px}.other-grid{grid-template-columns:1fr;gap:14px}.experience{min-height:240px}.experience .symbol{margin:10px 0;font-size:52px}.closing{margin:40px 0 25px;padding:28px 0}.closing p{font-size:32px;letter-spacing:-1px}footer p{max-width:190px;text-align:end}}@media(max-width:390px){.navlinks{display:none}.hero-top{letter-spacing:1px}h1{font-size:51px}}@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*:before,*:after{animation:none!important;transition:none!important}}
 
-/* Bright SOUND palette: ice-white canvas, electric blue and cyan. */
-:root{--bg:#f5f9ff;--surface:#fff;--line:#d5e1ef;--muted:#506078;--ink:#101d40;--font:"Noto Sans Arabic",Arial,sans-serif}
-body{color:var(--ink)}
-header{background:rgba(255,255,255,.94);border-bottom-color:#dce6f2}
-.wordmark{color:var(--blue);direction:ltr;font-family:Arial,sans-serif}
-.navlinks a:hover{color:var(--blue)}
-.language{color:var(--ink);background:white}
-.hero{margin-top:24px;padding:40px 36px 20px;border:1px solid #dbeaf8;border-radius:28px;background:radial-gradient(ellipse at 10% 15%,#a4efff 0,transparent 56%),linear-gradient(120deg,#e1f7ff,#fff 80%)}
-.hero-top{color:#006786;font-weight:700}
-.hero-top:before{background:#0094bd}
-h1{font-size:clamp(52px,7vw,94px);margin:24px 0;max-width:1000px}
-h1 em{color:var(--blue)}
-.hero-bottom p{max-width:550px;color:#465773;line-height:1.9}
-.browse{background:var(--blue);color:white;border:0;border-radius:14px;padding:14px 23px;white-space:nowrap;gap:28px}
-.browse span{color:white}
-.signal{margin-top:22px;height:64px}
-.signal i{background:#009ecb;max-height:60px}
-.section-nav{padding-top:24px}
-.section-nav a{background:white;color:#34445f}
-.section-nav a:first-child{background:var(--ink);color:white;border-color:var(--ink)}
-.section-nav a:hover{background:#e1f7ff;color:var(--ink)}
-.section-heading h2{font-size:30px}
-.card{box-shadow:0 8px 26px rgba(26,62,108,.045);border-color:#d5e1ef}
-.console{background:linear-gradient(145deg,#000bfa,#1649ef);color:white;border-color:#1437ee}
-.console .card-top{color:#e1e9ff}
-.console .display-caption{color:#dceaff}
-.pc{background:#e5faff}
-.pc .display-type{color:#007594}
-.vip{background:#eef0ff}
-.vip .display-type{-webkit-text-stroke:1.5px #000bfa;color:transparent}
-.card-top{color:#52627b;font-weight:600}
-.card-top .number{direction:ltr}
-.card p{line-height:1.9}
-.console p{color:#e5eaff}
-.other-grid .experience{background:white}
-.experience:nth-child(2){background:#e7f9ff}
-.experience:nth-child(3){background:#eaf0ff}
-.experience .symbol{color:var(--blue);font-size:48px}
-.closing{background:#02ccff;border:0;border-radius:22px;padding:30px 32px;color:#063054}
-.closing span{color:#063054}
-.closing a{border-color:#087492;color:#063054}
-.closing a:hover{background:white}
-footer .wordmark{color:var(--blue)}
-[dir="rtl"]{font-family:"Noto Sans Arabic",Tahoma,Arial,sans-serif}
-[dir="rtl"] h1{font-size:clamp(46px,6.5vw,82px);line-height:1.5;letter-spacing:0;font-weight:900}
-[dir="rtl"] h2,[dir="rtl"] h3{line-height:1.65}
-[dir="rtl"] .hero-top,[dir="rtl"] .card-top{letter-spacing:0}
-[dir="rtl"] .closing p{font-size:clamp(26px,3.5vw,44px);line-height:1.7}
-@media(max-width:760px){
- .hero{margin-top:16px;padding:25px 20px 12px;border-radius:22px}
- .hero-bottom p{font-size:15px;line-height:1.95}
- [dir="rtl"] h1{font-size:clamp(36px,8.6vw,60px);margin:18px 0;line-height:1.55}
- .hero-top{font-size:11px}
- .browse{padding:12px 18px;font-size:14px}
- .signal{margin-top:16px;height:48px}
- .signal i{max-height:44px}
- .navlinks{font-size:12px;gap:14px}
- .section-heading{gap:12px}
- .section-heading h2{font-size:25px}
- .closing{padding:24px 20px}
- .card p{font-size:15px}
- .console{min-height:365px}
+:root{
+ --bg:#f5f9ff;--surface:#fff;--ink:#101d40;--muted:#506078;
+ --line:#d5e1ef;--cyan:#02ccff;--blue:#000bfa;--radius:16px;
+ --font:"Noto Sans Arabic",Tahoma,Arial,sans-serif
 }
-
-
-.card-photo{position:relative;isolation:isolate;aspect-ratio:3/2;width:100%;margin:20px 0 24px;border-radius:14px;overflow:hidden;background:linear-gradient(130deg,#c8f5ff,#d9e4ff)}
-.card-photo img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:1;transition:transform .45s ease}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:108px;scrollbar-color:#7996b5 var(--bg)}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.8 var(--font)}
+a{color:inherit;text-decoration:none;text-underline-offset:4px}
+button{font:inherit;cursor:pointer}
+a,button{-webkit-tap-highlight-color:transparent}
+a:focus-visible,button:focus-visible,summary:focus-visible{outline:3px solid var(--blue);outline-offset:5px}
+::selection{background:var(--cyan);color:var(--ink)}
+.wrap{width:min(1200px,calc(100% - 64px));margin-inline:auto}
+.skip{position:fixed;top:-100px;inset-inline-start:20px;background:white;padding:12px 20px;z-index:100;border:2px solid var(--blue)}
+.skip:focus{top:12px}
+header{position:sticky;top:0;z-index:20;background:var(--surface);border-bottom:1px solid var(--line)}
+.nav{min-height:80px;display:flex;align-items:center;justify-content:space-between;gap:24px}
+.wordmark{direction:ltr;font:900 34px/1 Arial,sans-serif;letter-spacing:-.04em;color:var(--blue)}
+.wordmark span{color:var(--cyan)}
+.navlinks{display:flex;gap:24px;color:var(--muted);font-size:14px}
+.navlinks a{display:inline-flex;align-items:center;min-height:44px}
+.navlinks a:hover{color:var(--blue)}
+.language{border:1px solid var(--line);background:var(--surface);color:var(--ink);min-height:44px;padding:8px 18px;border-radius:30px}
+.language:hover{border-color:var(--blue);background:#eef2ff}
+.hero{margin-top:24px;padding:32px 36px 20px;border-radius:var(--radius);background:linear-gradient(120deg,#e1f7ff,#fff 80%);overflow:hidden}
+h1,h2,h3{font-weight:800;text-wrap:balance}
+h1{font-size:clamp(46px,6.5vw,82px);line-height:1.45;letter-spacing:0;margin:0 0 20px;max-width:960px}
+h1 em{font-style:normal;color:var(--blue)}
+[dir="ltr"] h1{font-size:clamp(44px,7vw,88px);line-height:1.1;letter-spacing:-.03em;margin:12px 0 28px}
+.hero-bottom{display:flex;align-items:center;justify-content:space-between;gap:28px}
+.hero-bottom p{max-width:540px;margin:0;color:var(--muted);font-size:17px;line-height:1.95}
+.browse{display:inline-flex;align-items:center;justify-content:space-between;gap:22px;background:var(--blue);color:#fff;border-radius:12px;padding:13px 20px;min-height:48px;flex-shrink:0;font-size:14px}
+.browse:hover{background:#0014bd}
+.browse:focus-visible{outline-color:var(--ink)}
+.signal{height:48px;display:flex;align-items:center;gap:5px;margin-top:26px;overflow:hidden;mask-image:linear-gradient(90deg,transparent,#000 10%,#000 90%,transparent)}
+.signal i{flex:1;min-width:3px;height:var(--h);max-height:46px;background:#009ecb;opacity:var(--o);border-radius:2px}
+.section-nav{display:flex;gap:8px;overflow-x:auto;padding:24px 4px 12px;scrollbar-width:thin;scrollbar-color:#7996b5 transparent}
+.section-nav a{white-space:nowrap;border:1px solid var(--line);border-radius:30px;padding:9px 18px;background:var(--surface);font-size:14px;min-height:46px}
+.section-nav a:hover{border-color:var(--blue);color:var(--blue)}
+.section-nav a[aria-current="location"]{background:var(--ink);color:white;border-color:var(--ink)}
+.section{padding:28px 0 12px}
+.section-heading{display:flex;align-items:center;justify-content:space-between;gap:16px;margin-bottom:8px}
+.section-heading h2{font-size:30px;line-height:1.6;margin:0}
+.section-heading>span{font-size:13px;color:var(--muted);flex-shrink:0}
+.menu-intro{color:var(--muted);font-size:14px;margin:0 0 28px;max-width:72ch}
+.menu-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:24px;align-items:start}
+.card{border:1px solid var(--line);border-radius:var(--radius);background:var(--surface);padding:22px;overflow:hidden;min-width:0}
+.card h3{font-size:26px;line-height:1.6;margin:0 0 16px}
+.card p{margin:0;color:var(--muted);line-height:1.95}
+.menu-blue{background:var(--blue);color:white;border-color:var(--blue)}
+.card-photo{position:relative;isolation:isolate;aspect-ratio:16/10;width:100%;margin:0 0 20px;border-radius:10px;overflow:hidden;background:#e1edfa}
+.card-photo img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center;z-index:1}
 .card-photo img[hidden]{display:none}
-.photo-fallback{position:absolute;inset:0;display:grid;place-items:center;color:#000bfa;font:900 clamp(28px,5vw,64px) Arial,sans-serif;direction:ltr}
-@media(hover:hover) and (prefers-reduced-motion:no-preference){.card:hover .card-photo img{transform:scale(1.035)}}
-.console .card-photo{flex:1;min-height:280px;max-height:460px}
-.console .display-caption{letter-spacing:0;margin:0 0 22px;text-align:center}
-.pc .card-photo{aspect-ratio:2/1}
-.experience{justify-content:flex-start}
-.experience .card-photo{aspect-ratio:4/3}
-.experience>div:last-child{margin-top:auto}
-.photo-note{font-size:13px;line-height:1.9;color:var(--muted);padding-top:18px;max-width:760px}
-.photo-credits{margin-top:8px;font-size:12px;color:var(--muted)}
-.photo-credits summary{cursor:pointer;min-height:36px;display:list-item}
-.photo-credits a{text-decoration:underline;text-underline-offset:3px}
-.photo-credits p{direction:ltr;text-align:start;line-height:2}
-@media(max-width:760px){.console .card-photo{min-height:0;flex:none;aspect-ratio:4/3}.card-photo{margin:16px 0 20px}.experience .card-photo{aspect-ratio:3/2}.console{min-height:0}.experience{min-height:0}}
-
-/* Price-led catalog: matching card sizes and gaming venue imagery. */
-.menu-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:24px}
-.menu-card{min-height:0;justify-content:flex-start;padding:24px}
-.menu-card .card-photo{flex:none;min-height:0;max-height:none;aspect-ratio:16/10;margin:18px 0 24px}
-.menu-card .card-photo img{object-fit:cover;object-position:center}
-.menu-card h3{margin-bottom:18px}
-.menu-blue{background:linear-gradient(135deg,#000bfa,#174fed);color:white}
-.menu-blue .card-top{color:#e6edff}
-.price-list{margin:0;margin-top:auto}
-.price-row{display:flex;align-items:center;justify-content:space-between;gap:14px;padding:17px 0;border-top:1px solid #d2dfef}
-.price-row dt{font-weight:600}
-.price-row dd{margin:0;white-space:nowrap;font-size:15px}
-.price-row dd b{font-size:28px;font-weight:800;unicode-bidi:isolate}
-.price-row small{display:block;color:var(--muted);text-align:end;font-size:12px}
-.menu-blue .price-row{border-color:#728bff}
+.photo-fallback{position:absolute;inset:0;display:grid;place-items:center;color:var(--blue);font:800 32px/1 var(--font);direction:ltr}
+.price-list{margin:0}
+.price-row{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:14px 0;border-top:1px solid var(--line)}
+.price-row:last-child{padding-bottom:0}
+.price-row dt{font-size:15px;font-weight:600;min-width:0}
+.price-row dd{margin:0;white-space:nowrap;font-size:13px;flex-shrink:0;text-align:end}
+.price-row dd b{font-size:28px;line-height:1.4;font-weight:800;font-variant-numeric:tabular-nums;unicode-bidi:isolate}
+.price-row small{display:block;color:var(--muted);font-size:12px;line-height:1.7}
+.menu-blue .price-row{border-color:#7580ff}
 .menu-blue .price-row small{color:#e5edff}
-.menu-intro{color:var(--muted);margin:0 0 24px}
-.menu-card .vip-note{font-size:13px;border-top:1px solid var(--line);padding-top:12px;margin-top:8px}
-.section-nav a:first-child{background:white;border-color:var(--line);color:#34445f}
-.section-nav a:hover{background:#e1f7ff}
-.section-heading>span{font-family:inherit}
-@media(max-width:760px){.menu-grid{grid-template-columns:1fr;gap:16px}.menu-card{padding:20px}.menu-card .card-photo{aspect-ratio:3/2}.price-row dd b{font-size:25px}.section-heading{align-items:start;flex-wrap:wrap}}
+.card .vip-note{font-size:13px;border-top:1px solid var(--line);padding-top:14px;margin-top:18px}
+.photo-note{font-size:13px;line-height:1.9;color:var(--muted);margin-top:24px;max-width:76ch}
+.photo-note>p{margin:0}
+.photo-credits{font-size:12px;margin-top:4px}
+.photo-credits summary{cursor:pointer;min-height:44px;padding-block:10px}
+.photo-credits a{text-decoration:underline;display:inline-block;padding-block:6px}
+.photo-credits a:hover{color:var(--blue)}
+.photo-credits p{direction:ltr;text-align:start;margin:0}
+.closing{margin:36px 0 28px;padding:24px 28px;border-radius:var(--radius);background:var(--cyan);color:#063054;display:flex;align-items:center;justify-content:space-between;gap:20px}
+.closing p{font-size:clamp(24px,3.2vw,40px);font-weight:800;line-height:1.6;margin:0}
+.closing a{width:48px;height:48px;display:grid;place-items:center;flex-shrink:0;border:1px solid #087492;border-radius:50%}
+.closing a:hover{background:white}
+footer{display:flex;align-items:center;justify-content:space-between;gap:24px;padding-bottom:28px}
+footer .wordmark{font-size:28px}
+footer p{color:var(--muted);font-size:12px;margin:0;text-align:end}
+@media(max-width:900px){.hero-bottom{align-items:start;flex-direction:column;gap:20px}.section-heading{flex-wrap:wrap;gap:6px}.navlinks{gap:16px}}
+@media(max-width:760px){
+ .wrap{width:calc(100% - 32px)}
+ .nav{min-height:72px;gap:14px}.wordmark{font-size:30px}.navlinks{font-size:12px;gap:12px}
+ .language{padding:8px 14px;font-size:14px}
+ .hero{margin-top:16px;padding:22px 20px 16px}
+ h1{font-size:clamp(34px,8.6vw,60px);margin-bottom:16px;line-height:1.5}
+ [dir="ltr"] h1{font-size:clamp(36px,9vw,64px)}
+ .hero-bottom p{font-size:15px}
+ .signal{height:36px;margin-top:20px}.signal i{max-height:34px}
+ .section-nav{padding-top:20px}.section-nav a{font-size:13px;padding-inline:15px}
+ .section{padding-top:20px}.section-heading h2{font-size:24px}
+ .menu-intro{font-size:13px;margin-bottom:20px}
+ .menu-grid{grid-template-columns:1fr;gap:20px}
+ .card{padding:18px}.card h3{font-size:24px;margin-bottom:12px}
+ .card-photo{aspect-ratio:16/10;margin-bottom:16px}
+ .price-row dd b{font-size:26px}.price-row dt{font-size:14px}
+ .closing{padding:20px;margin-top:28px}
+ footer{gap:16px}footer p{max-width:200px}
+}
+@media(max-width:390px){.navlinks{display:none}.price-row{gap:10px}.price-row dd b{font-size:24px}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+
 </style>
 </head>
 <body id="top">
 <a href="#lineup" class="skip" data-en="Skip to the lineup" data-ar="روح للأقسام">روح للأقسام</a>
 <header><div class="wrap nav">
 <a class="wordmark" href="#top" aria-label="SOUND home">sound<span>.</span></a>
-<nav class="navlinks" aria-label="Main navigation"><a href="#gaming" data-en="Gaming" data-ar="الألعاب">الألعاب</a><a href="#experiences" data-en="More at SOUND" data-ar="الأسعار">الأسعار</a></nav>
+<nav class="navlinks" aria-label="Main navigation"><a href="#gaming" data-en="Gaming" data-ar="الألعاب">الألعاب</a><a href="#experiences" data-en="Prices" data-ar="الأسعار">الأسعار</a></nav>
 <button class="language" id="language" type="button" aria-label="Switch to English">English</button>
 </div></header>
 <main class="wrap">
 <section class="hero" aria-labelledby="hero-title">
-<div class="hero-top" data-en="Gaming · Café · Good company" data-ar="لعب · قهوة · لَمّة حلوة">لعب · قهوة · لَمّة حلوة</div>
+
 <h1 id="hero-title"><span data-en="SOUND LEADS" data-ar="اللعب إلك.">اللعب إلك.</span><br><em data-en="THE GAME." data-ar="والجو علينا.">والجو علينا.</em></h1>
-<div class="hero-bottom"><p data-en="Your game. Your space. Find your next session at SOUND." data-ar="بلي، حاسبات، سينما، بليارد وسنوكر وVR. شوف الأسعار واختار قعدتك بساوند.">بلي، حاسبات، سينما، بليارد وسنوكر وVR. شوف الأسعار واختار قعدتك بساوند.</p><a class="browse" href="#lineup"><b data-en="Explore the lineup" data-ar="شوف الأقسام والأسعار">شوف الأقسام والأسعار</b><span aria-hidden="true">↓</span></a></div>
+<div class="hero-bottom"><p data-en="Your game. Your space. Find your next session at SOUND." data-ar="بلي، حاسبات، سينما، بليارد وسنوكر وVR. شوف الأسعار واختار قعدتك بساوند.">بلي، حاسبات، سينما، بليارد وسنوكر وVR. شوف الأسعار واختار قعدتك بساوند.</p><a class="browse" href="#lineup"><b data-en="Explore the lineup" data-ar="شوف الأقسام والأسعار">شوف الأقسام والأسعار</b><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M12 4v16m-6-6 6 6 6-6"/></svg></a></div>
 <div class="signal" aria-hidden="true"></div>
 </section>
 <div id="lineup">
@@ -142,42 +135,42 @@ footer .wordmark{color:var(--blue)}
 <div class="section-heading"><h2 id="gaming-title" data-ar="اختار جوّك. شوف الأسعار." data-en="Your session. Your choice.">اختار جوّك. شوف الأسعار.</h2><span data-ar="بالدينار العراقي" data-en="Prices in IQD">بالدينار العراقي</span></div>
 <p class="menu-intro" id="experiences"><span data-ar="كل الأسعار للساعة. أسعار السينما حسب عدد الأشخاص الموضّح." data-en="All rates are hourly. Cinema rates are for the group size shown.">كل الأسعار للساعة. أسعار السينما حسب عدد الأشخاص الموضّح.</span></p>
 <div class="menu-grid"><article class="card menu-card menu-blue" id="ps5">
-<div class="card-top"><span data-ar="البلي" data-en="PlayStation">البلي</span><span class="number">01</span></div>
+
 <figure class="card-photo"><span class="photo-fallback" aria-hidden="true">SOUND</span><img src="https://images.pexels.com/photos/7862267/pexels-photo-7862267.jpeg?auto=compress&amp;w=960" srcset="https://images.pexels.com/photos/7862267/pexels-photo-7862267.jpeg?auto=compress&amp;w=480 480w, https://images.pexels.com/photos/7862267/pexels-photo-7862267.jpeg?auto=compress&amp;w=960 960w" sizes="(max-width:760px) 90vw, (max-width:1360px) 44vw, 590px" width="960" height="640" loading="lazy" decoding="async" alt="صورة توضيحية للعب الجماعي" data-alt-ar="صورة توضيحية للعب الجماعي" data-alt-en="Illustrative social gaming photo" onerror="this.hidden=true"></figure>
 <h3 data-ar="البلي" data-en="PlayStation">البلي</h3>
 <dl class="price-list"><div class="price-row"><dt><span data-ar="الساعة" data-en="Per hour">الساعة</span></dt><dd data-price="5000"><b data-ar="٥٬٠٠٠" data-en="5,000">٥٬٠٠٠</b> <span data-ar="د.ع" data-en="IQD">د.ع</span><small><span data-ar="للساعة" data-en="/ hour">للساعة</span></small></dd></div></dl>
 
 </article>
 <article class="card menu-card " id="pc">
-<div class="card-top"><span data-ar="الحاسبات" data-en="Gaming PCs">الحاسبات</span><span class="number">02</span></div>
+
 <figure class="card-photo"><span class="photo-fallback" aria-hidden="true">SOUND</span><img src="https://images.pexels.com/photos/9072394/pexels-photo-9072394.jpeg?auto=compress&amp;w=960" srcset="https://images.pexels.com/photos/9072394/pexels-photo-9072394.jpeg?auto=compress&amp;w=480 480w, https://images.pexels.com/photos/9072394/pexels-photo-9072394.jpeg?auto=compress&amp;w=960 960w" sizes="(max-width:760px) 90vw, (max-width:1360px) 44vw, 590px" width="960" height="640" loading="lazy" decoding="async" alt="صورة توضيحية لصالة حاسبات ألعاب" data-alt-ar="صورة توضيحية لصالة حاسبات ألعاب" data-alt-en="Illustrative gaming room photo" onerror="this.hidden=true"></figure>
 <h3 data-ar="الحاسبات" data-en="Gaming PCs">الحاسبات</h3>
 <dl class="price-list"><div class="price-row"><dt><span data-ar="أيليت" data-en="Elite">أيليت</span></dt><dd data-price="2500"><b data-ar="٢٬٥٠٠" data-en="2,500">٢٬٥٠٠</b> <span data-ar="د.ع" data-en="IQD">د.ع</span><small><span data-ar="للساعة" data-en="/ hour">للساعة</span></small></dd></div><div class="price-row"><dt><span data-ar="الماستر" data-en="Master">الماستر</span></dt><dd data-price="3500"><b data-ar="٣٬٥٠٠" data-en="3,500">٣٬٥٠٠</b> <span data-ar="د.ع" data-en="IQD">د.ع</span><small><span data-ar="للساعة" data-en="/ hour">للساعة</span></small></dd></div></dl>
 <p class="vip-note" id="vip"><span data-ar="ومتوفرة غرفة بي سي VIP." data-en="A VIP PC room is also available.">ومتوفرة غرفة بي سي VIP.</span></p>
 </article>
 <article class="card menu-card " id="cinema">
-<div class="card-top"><span data-ar="السينما" data-en="Cinema">السينما</span><span class="number">03</span></div>
+
 <figure class="card-photo"><span class="photo-fallback" aria-hidden="true">SOUND</span><img src="https://images.unsplash.com/photo-1766844649143-af98d71e346b?auto=format&amp;w=960" srcset="https://images.unsplash.com/photo-1766844649143-af98d71e346b?auto=format&amp;w=480 480w, https://images.unsplash.com/photo-1766844649143-af98d71e346b?auto=format&amp;w=960 960w" sizes="(max-width:760px) 90vw, (max-width:1360px) 44vw, 590px" width="960" height="640" loading="lazy" decoding="async" alt="صورة توضيحية لسينما" data-alt-ar="صورة توضيحية لسينما" data-alt-en="Illustrative cinema photo" onerror="this.hidden=true"></figure>
 <h3 data-ar="السينما" data-en="Cinema">السينما</h3>
 <dl class="price-list"><div class="price-row"><dt><span data-ar="٤ أشخاص" data-en="4 people">٤ أشخاص</span></dt><dd data-price="10000"><b data-ar="١٠٬٠٠٠" data-en="10,000">١٠٬٠٠٠</b> <span data-ar="د.ع" data-en="IQD">د.ع</span><small><span data-ar="للساعة" data-en="/ hour">للساعة</span></small></dd></div><div class="price-row"><dt><span data-ar="١٠ أشخاص" data-en="10 people">١٠ أشخاص</span></dt><dd data-price="30000"><b data-ar="٣٠٬٠٠٠" data-en="30,000">٣٠٬٠٠٠</b> <span data-ar="د.ع" data-en="IQD">د.ع</span><small><span data-ar="للساعة" data-en="/ hour">للساعة</span></small></dd></div></dl>
 
 </article>
 <article class="card menu-card " id="billiards">
-<div class="card-top"><span data-ar="البلياردو والسنوكر" data-en="Billiards & snooker">البلياردو والسنوكر</span><span class="number">04</span></div>
+
 <figure class="card-photo"><span class="photo-fallback" aria-hidden="true">SOUND</span><img src="https://images.unsplash.com/photo-1776513726354-a2cbbd951ef7?auto=format&amp;w=960" srcset="https://images.unsplash.com/photo-1776513726354-a2cbbd951ef7?auto=format&amp;w=480 480w, https://images.unsplash.com/photo-1776513726354-a2cbbd951ef7?auto=format&amp;w=960 960w" sizes="(max-width:760px) 90vw, (max-width:1360px) 44vw, 590px" width="960" height="640" loading="lazy" decoding="async" alt="صورة توضيحية للبليارد" data-alt-ar="صورة توضيحية للبليارد" data-alt-en="Illustrative billiards photo" onerror="this.hidden=true"></figure>
 <h3 data-ar="البلياردو والسنوكر" data-en="Billiards & snooker">البلياردو والسنوكر</h3>
 <dl class="price-list"><div class="price-row"><dt><span data-ar="البليارد زون" data-en="Billiards zone">البليارد زون</span></dt><dd data-price="6000"><b data-ar="٦٬٠٠٠" data-en="6,000">٦٬٠٠٠</b> <span data-ar="د.ع" data-en="IQD">د.ع</span><small><span data-ar="للساعة" data-en="/ hour">للساعة</span></small></dd></div><div class="price-row"><dt><span data-ar="السنوكر زون" data-en="Snooker zone">السنوكر زون</span></dt><dd data-price="15000"><b data-ar="١٥٬٠٠٠" data-en="15,000">١٥٬٠٠٠</b> <span data-ar="د.ع" data-en="IQD">د.ع</span><small><span data-ar="للساعة" data-en="/ hour">للساعة</span></small></dd></div></dl>
 
 </article>
 <article class="card menu-card " id="vr">
-<div class="card-top"><span data-ar="الواقع الافتراضي" data-en="Virtual reality">الواقع الافتراضي</span><span class="number">05</span></div>
+
 <figure class="card-photo"><span class="photo-fallback" aria-hidden="true">SOUND</span><img src="https://images.pexels.com/photos/6498961/pexels-photo-6498961.jpeg?auto=compress&amp;w=960" srcset="https://images.pexels.com/photos/6498961/pexels-photo-6498961.jpeg?auto=compress&amp;w=480 480w, https://images.pexels.com/photos/6498961/pexels-photo-6498961.jpeg?auto=compress&amp;w=960 960w" sizes="(max-width:760px) 90vw, (max-width:1360px) 44vw, 590px" width="960" height="640" loading="lazy" decoding="async" alt="صورة توضيحية للواقع الافتراضي بصالة ألعاب" data-alt-ar="صورة توضيحية للواقع الافتراضي بصالة ألعاب" data-alt-en="Illustrative VR arcade photo" onerror="this.hidden=true"></figure>
 <h3 data-ar="الواقع الافتراضي" data-en="Virtual reality">الواقع الافتراضي</h3>
 <dl class="price-list"><div class="price-row"><dt><span data-ar="الساعة" data-en="Per hour">الساعة</span></dt><dd data-price="20000"><b data-ar="٢٠٬٠٠٠" data-en="20,000">٢٠٬٠٠٠</b> <span data-ar="د.ع" data-en="IQD">د.ع</span><small><span data-ar="للساعة" data-en="/ hour">للساعة</span></small></dd></div></dl>
 
 </article>
 <article class="card menu-card " id="cafe">
-<div class="card-top"><span data-ar="الكافيه والمطعم" data-en="Café & restaurant">الكافيه والمطعم</span><span class="number">06</span></div>
+
 <figure class="card-photo"><span class="photo-fallback" aria-hidden="true">SOUND</span><img src="https://images.unsplash.com/photo-1413745094207-a01b234cc32f?auto=format&amp;w=960" srcset="https://images.unsplash.com/photo-1413745094207-a01b234cc32f?auto=format&amp;w=480 480w, https://images.unsplash.com/photo-1413745094207-a01b234cc32f?auto=format&amp;w=960 960w" sizes="(max-width:760px) 90vw, (max-width:1360px) 44vw, 590px" width="960" height="640" loading="lazy" decoding="async" alt="صورة توضيحية للقهوة" data-alt-ar="صورة توضيحية للقهوة" data-alt-en="Illustrative coffee photo" onerror="this.hidden=true"></figure>
 <h3 data-ar="الكافيه والمطعم" data-en="Café & restaurant">الكافيه والمطعم</h3>
 <p data-ar="خذلك استراحة للأكل والشرب، وبعدين كمّل اللعب." data-en="Take a break for food and drinks, then get back to your game.">خذلك استراحة للأكل والشرب، وبعدين كمّل اللعب.</p>
@@ -185,7 +178,7 @@ footer .wordmark{color:var(--blue)}
 </article></div>
 </section></div>
 <aside class="photo-note"><p data-en="Photos are illustrative stock images, not photographs of SOUND or its actual facilities." data-ar="الصور توضيحية، مو صور فعلية لساوند أو لتجهيزاته.">الصور توضيحية، مو صور فعلية لساوند أو لتجهيزاته.</p><details class="photo-credits"><summary><span data-ar="مصادر الصور" data-en="Photo credits">مصادر الصور</span></summary><p><a href="https://www.pexels.com/photo/gaming-setup-for-competitive-esports-9072394/" target="_blank" rel="noopener noreferrer">Gaming room · Yan Krukau / Pexels</a> · <a href="https://www.pexels.com/photo/two-men-holding-controllers-sitting-on-couch-in-a-room-with-neon-lights-7862267/" target="_blank" rel="noopener noreferrer">Console gaming · Pexels</a> · <a href="https://www.pexels.com/photo/man-playing-virtual-reality-game-6498961/" target="_blank" rel="noopener noreferrer">VR · Tima Miroshnichenko / Pexels</a> · <a href="https://unsplash.com/photos/dXpJeKIWfGs" target="_blank" rel="noopener noreferrer">Cinema · Rapha Wilde</a> · <a href="https://unsplash.com/photos/H-3pTksDZEw" target="_blank" rel="noopener noreferrer">Billiards · jackson kondili</a> · <a href="https://unsplash.com/photos/tZKwLRO904E" target="_blank" rel="noopener noreferrer">Coffee · Drew Coffman</a></p></details></aside>
-<div class="closing"><p><span data-en="PLAY" data-ar="لعب، لَمّة،">لعب، لَمّة،</span> <b data-en="IN HARMONY." data-ar="وجو حلو.">وجو حلو.</b></p><a href="#top" aria-label="Back to top">↑</a></div>
+<div class="closing"><p><span data-en="PLAY" data-ar="لعب، لَمّة،">لعب، لَمّة،</span> <b data-en="IN HARMONY." data-ar="وجو حلو.">وجو حلو.</b></p><a href="#top" aria-label="Back to top"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M12 20V4m-6 6 6-6 6 6"/></svg></a></div>
 </main>
 <footer class="wrap"><a href="#top" class="wordmark" aria-label="SOUND home">sound<span>.</span></a><p data-en="SOUND · Gaming, café & good company." data-ar="ساوند · لعب وقهوة ولَمّة حلوة.">ساوند · لعب وقهوة ولَمّة حلوة.</p></footer>
 <script>
@@ -212,6 +205,19 @@ footer .wordmark{color:var(--blue)}
   var initial='ar';
   try{if(localStorage.getItem('sound-menu-language-v2')==='en')initial='en'}catch(e){}
   setLanguage(initial);
+
+  var categoryLinks=Array.from(document.querySelectorAll('.section-nav a'));
+  function syncCategory(){
+    var selected=window.location.hash;
+    if(selected==='#vip')selected='#pc';
+    categoryLinks.forEach(function(link){
+      if(link.getAttribute('href')===selected)link.setAttribute('aria-current','location');
+      else link.removeAttribute('aria-current');
+    });
+  }
+  window.addEventListener('hashchange',syncCategory);
+  syncCategory();
+
 })();
 </script>
 </body>
