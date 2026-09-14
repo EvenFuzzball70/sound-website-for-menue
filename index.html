@@ -1,68 +1,142 @@
 <!doctype html>
-<html lang="en">
+<html lang="ar" dir="rtl">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="theme-color" content="#050918">
-<meta name="description" content="Explore SOUND: PlayStation 5, gaming PCs, a VIP PC room, cinema, billiards and café. Sound leads the game.">
-<title>SOUND — Play in harmony</title>
+<meta name="theme-color" content="#f5f9ff">
+<meta name="description" content="شوف شنو عدنا بساوند: بلايستيشن 5، بي سي، غرفة VIP، سينما، بليارد وكافيه. اختار جوّك وتعال ويّا ربعك.">
+<title>ساوند — لعب وقهوة ولَمّة حلوة</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Arabic:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
 <style>
 :root{--bg:#050918;--surface:#0c1226;--line:#253047;--cyan:#02ccff;--blue:#000bfa;--white:#fff;--muted:#a5b1c9;--font:Arial,Helvetica,sans-serif}
 *{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:105px}body{margin:0;background:var(--bg);color:var(--white);font-family:var(--font);font-size:16px;line-height:1.5}a{color:inherit;text-decoration:none}button{font:inherit;cursor:pointer}a,button{-webkit-tap-highlight-color:transparent}a:focus-visible,button:focus-visible{outline:3px solid var(--cyan);outline-offset:6px}::selection{background:var(--cyan);color:var(--bg)}.wrap{width:min(1280px,calc(100% - 80px));margin:auto}.skip{position:fixed;top:-80px;left:20px;background:white;color:black;padding:12px;z-index:100}.skip:focus{top:12px}header{position:sticky;top:0;z-index:20;background:rgba(5,9,24,.94);backdrop-filter:blur(16px);border-bottom:1px solid var(--line)}.nav{min-height:88px;display:flex;align-items:center;justify-content:space-between;gap:30px}.wordmark{font-size:34px;font-weight:900;letter-spacing:-2.5px;line-height:1}.wordmark span{color:var(--cyan)}.navlinks{display:flex;gap:32px;color:var(--muted);font-size:14px}.navlinks a:hover{color:white}.language{background:transparent;border:1px solid var(--line);color:white;padding:9px 17px;border-radius:30px;min-height:44px}.language:hover{border-color:var(--cyan)}.hero{padding:70px 0 48px;position:relative;overflow:hidden}.hero-top{display:flex;align-items:center;gap:14px;font-size:12px;letter-spacing:3px;text-transform:uppercase;color:var(--cyan)}.hero-top:before{content:"";width:32px;height:1px;background:var(--cyan)}h1{font-size:clamp(56px,8.6vw,116px);line-height:.96;letter-spacing:-.075em;margin:30px 0;font-weight:900;max-width:900px}h1 em{font-style:normal;color:var(--cyan)}.hero-bottom{display:flex;align-items:end;justify-content:space-between;gap:24px}.hero-bottom p{color:var(--muted);max-width:390px;font-size:18px;margin:0}.browse{display:inline-flex;align-items:center;justify-content:space-between;gap:45px;padding:16px 0 12px;border-bottom:1px solid var(--cyan);font-size:15px}.browse span{color:var(--cyan);font-size:23px;transition:transform .2s}.browse:hover span{transform:translateY(4px)}.signal{height:78px;display:flex;align-items:center;gap:5px;margin-top:44px;overflow:hidden;mask-image:linear-gradient(90deg,transparent,#000 10%,#000 90%,transparent)}.signal i{flex:1;min-width:3px;height:var(--h);background:var(--cyan);opacity:var(--o);border-radius:2px;transition:height .35s}.section-nav{display:flex;gap:10px;overflow-x:auto;padding:4px 0 30px;scrollbar-width:thin}.section-nav a{white-space:nowrap;border:1px solid var(--line);border-radius:40px;padding:10px 20px;font-size:14px;min-height:44px}.section-nav a:first-child{background:white;border-color:white;color:var(--bg)}.section-nav a:hover{border-color:var(--cyan)}.section{padding:45px 0 30px;scroll-margin-top:100px}.section-heading{display:flex;align-items:center;gap:20px;margin-bottom:24px}.section-heading h2{font-size:34px;letter-spacing:-1.4px;margin:0}.section-heading span{font:12px monospace;color:var(--muted);border:1px solid var(--line);padding:3px 9px;border-radius:30px}.gaming-grid{display:grid;grid-template-columns:1.15fr 1fr;gap:20px}.card{position:relative;overflow:hidden;border:1px solid var(--line);border-radius:20px;background:var(--surface);padding:30px;display:flex;flex-direction:column;justify-content:space-between;min-height:280px}.console{grid-row:span 2;min-height:600px;background:var(--blue);border-color:var(--blue)}.card-top{display:flex;justify-content:space-between;gap:20px;align-items:center;font-size:12px;text-transform:uppercase;letter-spacing:2px}.card-top .number{opacity:.6;font:13px monospace;letter-spacing:0}.display-type{font-size:clamp(70px,10vw,148px);line-height:1;letter-spacing:-.09em;font-weight:900;align-self:center;margin:30px 0;color:white}.console .display-type{font-size:clamp(100px,14vw,200px);transform:rotate(-9deg);letter-spacing:-.08em}.console .display-caption{font-size:13px;letter-spacing:5px;align-self:center;color:#ccdaff;margin-top:-5px;margin-bottom:25px}.card h3{font-size:28px;letter-spacing:-.9px;line-height:1.2;margin:0 0 10px}.card p{color:var(--muted);margin:0;max-width:360px}.console p{color:#d9dfff}.card-bottom{display:flex;gap:15px;align-items:end;justify-content:space-between}.card-arrow{font-size:24px;color:var(--cyan)}.pc .display-type{font-size:78px;margin:15px 0;align-self:flex-end;color:var(--cyan)}.vip{background:#101a30}.vip .display-type{font-size:76px;margin:10px 0 16px;align-self:flex-end;-webkit-text-stroke:1px var(--cyan);color:transparent;letter-spacing:-.05em}.card:hover{border-color:#597599}.console:hover{border-color:var(--cyan)}.other-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}.experience{min-height:330px;padding:26px}.experience .symbol{font-size:64px;font-weight:900;letter-spacing:-.08em;line-height:1.2;margin:25px 0;color:var(--cyan)}.experience .symbol small{font-size:16px;letter-spacing:0}.experience h3{font-size:24px}.experience p{font-size:15px}.experience:nth-child(2){background:#101b2b}.experience:nth-child(3){background:#10222d}.closing{margin:64px 0 40px;border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:40px 0;display:flex;align-items:center;justify-content:space-between;gap:20px}.closing p{font-size:clamp(30px,4vw,54px);font-weight:800;letter-spacing:-2px;margin:0}.closing span{color:var(--cyan)}.closing a{width:50px;height:50px;display:grid;place-items:center;border:1px solid var(--line);border-radius:50%;font-size:24px;flex-shrink:0}.closing a:hover{background:var(--cyan);color:var(--bg)}footer{padding:0 0 36px;display:flex;justify-content:space-between;gap:20px;align-items:center}footer p{font-size:12px;color:var(--muted);margin:0}footer .wordmark{font-size:26px} [dir="rtl"]{font-family:Tahoma,Arial,sans-serif}[dir="rtl"] h1{letter-spacing:-.04em;line-height:1.2;font-size:clamp(48px,7vw,90px)}[dir="rtl"] h2,[dir="rtl"] h3,[dir="rtl"] .closing p{letter-spacing:0}[dir="rtl"] .wordmark,[dir="rtl"] .display-type,[dir="rtl"] .symbol{direction:ltr;font-family:Arial,sans-serif}[dir="rtl"] .hero-top,[dir="rtl"] .card-top{letter-spacing:0}
 @media(min-width:1000px){.hero{animation:arrive .6s ease-out both}@keyframes arrive{from{transform:translateY(14px)}to{transform:translateY(0)}}}
 @media(max-width:760px){.wrap{width:calc(100% - 36px)}.nav{min-height:72px;gap:15px}.wordmark{font-size:30px}.navlinks{gap:17px;font-size:13px}.hero{padding:45px 0 25px}.hero-top{font-size:11px;letter-spacing:2px}h1{font-size:clamp(53px,12vw,90px);margin:24px 0}.hero-bottom{align-items:start;flex-direction:column;gap:18px}.hero-bottom p{font-size:16px;max-width:310px}.browse{padding:9px 0;gap:45px}.signal{height:54px;margin-top:25px;gap:4px}.section-nav{padding-bottom:10px}.section-nav a{padding:10px 17px}.section{padding-top:30px}.section-heading h2{font-size:28px}.gaming-grid{grid-template-columns:1fr;gap:14px}.console{grid-row:auto;min-height:395px}.console .display-type{font-size:140px;margin:20px 0}.card{padding:23px}.card h3{font-size:25px}.pc,.vip{min-height:260px}.pc .display-type,.vip .display-type{font-size:68px}.other-grid{grid-template-columns:1fr;gap:14px}.experience{min-height:240px}.experience .symbol{margin:10px 0;font-size:52px}.closing{margin:40px 0 25px;padding:28px 0}.closing p{font-size:32px;letter-spacing:-1px}footer p{max-width:190px;text-align:end}}@media(max-width:390px){.navlinks{display:none}.hero-top{letter-spacing:1px}h1{font-size:51px}}@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*:before,*:after{animation:none!important;transition:none!important}}
+
+/* Bright SOUND palette: ice-white canvas, electric blue and cyan. */
+:root{--bg:#f5f9ff;--surface:#fff;--line:#d5e1ef;--muted:#506078;--ink:#101d40;--font:"Noto Sans Arabic",Arial,sans-serif}
+body{color:var(--ink)}
+header{background:rgba(255,255,255,.94);border-bottom-color:#dce6f2}
+.wordmark{color:var(--blue);direction:ltr;font-family:Arial,sans-serif}
+.navlinks a:hover{color:var(--blue)}
+.language{color:var(--ink);background:white}
+.hero{margin-top:24px;padding:40px 36px 20px;border:1px solid #dbeaf8;border-radius:28px;background:radial-gradient(ellipse at 10% 15%,#a4efff 0,transparent 56%),linear-gradient(120deg,#e1f7ff,#fff 80%)}
+.hero-top{color:#006786;font-weight:700}
+.hero-top:before{background:#0094bd}
+h1{font-size:clamp(52px,7vw,94px);margin:24px 0;max-width:1000px}
+h1 em{color:var(--blue)}
+.hero-bottom p{max-width:550px;color:#465773;line-height:1.9}
+.browse{background:var(--blue);color:white;border:0;border-radius:14px;padding:14px 23px;white-space:nowrap;gap:28px}
+.browse span{color:white}
+.signal{margin-top:22px;height:64px}
+.signal i{background:#009ecb;max-height:60px}
+.section-nav{padding-top:24px}
+.section-nav a{background:white;color:#34445f}
+.section-nav a:first-child{background:var(--ink);color:white;border-color:var(--ink)}
+.section-nav a:hover{background:#e1f7ff;color:var(--ink)}
+.section-heading h2{font-size:30px}
+.card{box-shadow:0 8px 26px rgba(26,62,108,.045);border-color:#d5e1ef}
+.console{background:linear-gradient(145deg,#000bfa,#1649ef);color:white;border-color:#1437ee}
+.console .card-top{color:#e1e9ff}
+.console .display-caption{color:#dceaff}
+.pc{background:#e5faff}
+.pc .display-type{color:#007594}
+.vip{background:#eef0ff}
+.vip .display-type{-webkit-text-stroke:1.5px #000bfa;color:transparent}
+.card-top{color:#52627b;font-weight:600}
+.card-top .number{direction:ltr}
+.card p{line-height:1.9}
+.console p{color:#e5eaff}
+.other-grid .experience{background:white}
+.experience:nth-child(2){background:#e7f9ff}
+.experience:nth-child(3){background:#eaf0ff}
+.experience .symbol{color:var(--blue);font-size:48px}
+.closing{background:#02ccff;border:0;border-radius:22px;padding:30px 32px;color:#063054}
+.closing span{color:#063054}
+.closing a{border-color:#087492;color:#063054}
+.closing a:hover{background:white}
+footer .wordmark{color:var(--blue)}
+[dir="rtl"]{font-family:"Noto Sans Arabic",Tahoma,Arial,sans-serif}
+[dir="rtl"] h1{font-size:clamp(46px,6.5vw,82px);line-height:1.5;letter-spacing:0;font-weight:900}
+[dir="rtl"] h2,[dir="rtl"] h3{line-height:1.65}
+[dir="rtl"] .hero-top,[dir="rtl"] .card-top{letter-spacing:0}
+[dir="rtl"] .closing p{font-size:clamp(26px,3.5vw,44px);line-height:1.7}
+@media(max-width:760px){
+ .hero{margin-top:16px;padding:25px 20px 12px;border-radius:22px}
+ .hero-bottom p{font-size:15px;line-height:1.95}
+ [dir="rtl"] h1{font-size:clamp(36px,8.6vw,60px);margin:18px 0;line-height:1.55}
+ .hero-top{font-size:11px}
+ .browse{padding:12px 18px;font-size:14px}
+ .signal{margin-top:16px;height:48px}
+ .signal i{max-height:44px}
+ .navlinks{font-size:12px;gap:14px}
+ .section-heading{gap:12px}
+ .section-heading h2{font-size:25px}
+ .closing{padding:24px 20px}
+ .card p{font-size:15px}
+ .console{min-height:365px}
+}
+
 </style>
 </head>
 <body id="top">
-<a href="#lineup" class="skip" data-en="Skip to the lineup" data-ar="انتقل إلى الأنشطة">Skip to the lineup</a>
+<a href="#lineup" class="skip" data-en="Skip to the lineup" data-ar="روح للأقسام">روح للأقسام</a>
 <header><div class="wrap nav">
 <a class="wordmark" href="#top" aria-label="SOUND home">sound<span>.</span></a>
-<nav class="navlinks" aria-label="Main navigation"><a href="#gaming" data-en="Gaming" data-ar="الألعاب">Gaming</a><a href="#experiences" data-en="More at SOUND" data-ar="المزيد في ساوند">More at SOUND</a></nav>
-<button class="language" id="language" type="button" aria-label="Switch to Arabic">العربية</button>
+<nav class="navlinks" aria-label="Main navigation"><a href="#gaming" data-en="Gaming" data-ar="الألعاب">الألعاب</a><a href="#experiences" data-en="More at SOUND" data-ar="بعد شنو عدنا؟">بعد شنو عدنا؟</a></nav>
+<button class="language" id="language" type="button" aria-label="Switch to English">English</button>
 </div></header>
 <main class="wrap">
 <section class="hero" aria-labelledby="hero-title">
-<div class="hero-top" data-en="Gaming · Café · Good company" data-ar="ألعاب · كافيه · أوقات حلوة">Gaming · Café · Good company</div>
-<h1 id="hero-title"><span data-en="SOUND LEADS" data-ar="ساوند يقود">SOUND LEADS</span><br><em data-en="THE GAME." data-ar="اللعبة.">THE GAME.</em></h1>
-<div class="hero-bottom"><p data-en="Your game. Your space. Find your next session at SOUND." data-ar="لعبتك. مساحتك. اكتشف جلستك الجاية في ساوند.">Your game. Your space. Find your next session at SOUND.</p><a class="browse" href="#lineup"><b data-en="Explore the lineup" data-ar="اكتشف الأنشطة">Explore the lineup</b><span aria-hidden="true">↓</span></a></div>
+<div class="hero-top" data-en="Gaming · Café · Good company" data-ar="لعب · قهوة · لَمّة حلوة">لعب · قهوة · لَمّة حلوة</div>
+<h1 id="hero-title"><span data-en="SOUND LEADS" data-ar="اللعب إلك.">اللعب إلك.</span><br><em data-en="THE GAME." data-ar="والجو علينا.">والجو علينا.</em></h1>
+<div class="hero-bottom"><p data-en="Your game. Your space. Find your next session at SOUND." data-ar="بلايستيشن، بي سي، سينما وبليارد. تعال ويّا ربعك، واختاروا جوّكم بساوند.">بلايستيشن، بي سي، سينما وبليارد. تعال ويّا ربعك، واختاروا جوّكم بساوند.</p><a class="browse" href="#lineup"><b data-en="Explore the lineup" data-ar="شوف شنو عدنا">شوف شنو عدنا</b><span aria-hidden="true">↓</span></a></div>
 <div class="signal" aria-hidden="true"></div>
 </section>
 <div id="lineup">
-<nav class="section-nav" aria-label="Catalog categories"><a href="#gaming" data-en="The lineup" data-ar="الأنشطة">The lineup</a><a href="#ps5">PlayStation 5</a><a href="#pc" data-en="Gaming PCs" data-ar="أجهزة PC">Gaming PCs</a><a href="#vip" data-en="VIP PC room" data-ar="غرفة VIP PC">VIP PC room</a><a href="#experiences" data-en="Cinema & more" data-ar="سينما وأكثر">Cinema & more</a></nav>
+<nav class="section-nav" aria-label="Catalog categories"><a href="#gaming" data-en="The lineup" data-ar="كل الأقسام">كل الأقسام</a><a href="#ps5" data-en="PlayStation 5" data-ar="بلايستيشن 5">بلايستيشن 5</a><a href="#pc" data-en="Gaming PCs" data-ar="بي سي">بي سي</a><a href="#vip" data-en="VIP PC room" data-ar="غرفة بي سي VIP">غرفة بي سي VIP</a><a href="#experiences" data-en="Cinema & more" data-ar="سينما وبليارد وكافيه">سينما وبليارد وكافيه</a></nav>
 <section class="section" id="gaming" aria-labelledby="gaming-title">
-<div class="section-heading"><h2 id="gaming-title" data-en="Choose your game." data-ar="اختار لعبتك.">Choose your game.</h2><span>01—03</span></div>
+<div class="section-heading"><h2 id="gaming-title" data-en="Choose your game." data-ar="شنو تلعب اليوم؟">شنو تلعب اليوم؟</h2><span>01—03</span></div>
 <div class="gaming-grid">
-<article class="card console" id="ps5"><div class="card-top"><span data-en="Console gaming" data-ar="ألعاب الكونسول">Console gaming</span><span class="number">01</span></div><div class="display-type" aria-hidden="true">PS5</div><div class="display-caption" aria-hidden="true">PLAY TOGETHER</div><div class="card-bottom"><div><h3>PlayStation 5</h3><p data-en="Settle in, pick your side and make it a match to remember." data-ar="خذ مكانك، اختار فريقك وخليها مباراة ما تنسيها.">Settle in, pick your side and make it a match to remember.</p></div></div></article>
-<article class="card pc" id="pc"><div class="card-top"><span data-en="PC gaming" data-ar="ألعاب الكمبيوتر">PC gaming</span><span class="number">02</span></div><div class="display-type" aria-hidden="true">PC.</div><div><h3 data-en="Get in the game." data-ar="ادخل جو اللعبة.">Get in the game.</h3><p data-en="A space for your next match, your favorite games and your whole squad." data-ar="مساحة لمباراتك الجاية، ألعابك المفضلة وكل أصحابك.">A space for your next match, your favorite games and your whole squad.</p></div></article>
-<article class="card vip" id="vip"><div class="card-top"><span data-en="VIP PC room" data-ar="غرفة VIP PC">VIP PC room</span><span class="number">03</span></div><div class="display-type" aria-hidden="true">VIP</div><div><h3 data-en="Your own zone." data-ar="جوّك الخاص.">Your own zone.</h3><p data-en="Take your session into the VIP PC room. More room to focus on your game." data-ar="عِش الجلسة في غرفة VIP PC. جو خاص حتى تركز على لعبتك.">Take your session into the VIP PC room. More room to focus on your game.</p></div></article>
+<article class="card console" id="ps5"><div class="card-top"><span data-en="Console gaming" data-ar="بلايستيشن">بلايستيشن</span><span class="number">01</span></div><div class="display-type" aria-hidden="true">PS5</div><div class="display-caption" aria-hidden="true" data-en="PLAY TOGETHER" data-ar="اللعب يحلى ويّا الربع">اللعب يحلى ويّا الربع</div><div class="card-bottom"><div><h3 data-en="PlayStation 5" data-ar="بلايستيشن 5">بلايستيشن 5</h3><p data-en="Settle in, pick your side and make it a match to remember." data-ar="لُمّ ربعك، اختار فريقك وخلّ التحدّي يبدي. منو يفوز هالمرّة؟">لُمّ ربعك، اختار فريقك وخلّ التحدّي يبدي. منو يفوز هالمرّة؟</p></div></div></article>
+<article class="card pc" id="pc"><div class="card-top"><span data-en="PC gaming" data-ar="ألعاب البي سي">ألعاب البي سي</span><span class="number">02</span></div><div class="display-type" aria-hidden="true">PC.</div><div><h3 data-en="Get in the game." data-ar="جهّز السكواد.">جهّز السكواد.</h3><p data-en="A space for your next match, your favorite games and your whole squad." data-ar="ألعابك المفضّلة، ربعك وياك، والتحدّي حاضر. اختار لعبتك وابدأ الجولة.">ألعابك المفضّلة، ربعك وياك، والتحدّي حاضر. اختار لعبتك وابدأ الجولة.</p></div></article>
+<article class="card vip" id="vip"><div class="card-top"><span data-en="VIP PC room" data-ar="غرفة بي سي VIP">غرفة بي سي VIP</span><span class="number">03</span></div><div class="display-type" aria-hidden="true">VIP</div><div><h3 data-en="Your own zone." data-ar="لعب على مزاجك.">لعب على مزاجك.</h3><p data-en="Take your session into the VIP PC room. More room to focus on your game." data-ar="تريد جو أخصّ؟ غرفة البي سي VIP إلك ولربعك، حتى تاخذون راحتكم باللعب.">تريد جو أخصّ؟ غرفة البي سي VIP إلك ولربعك، حتى تاخذون راحتكم باللعب.</p></div></article>
 </div></section>
 <section class="section" id="experiences" aria-labelledby="experiences-title">
-<div class="section-heading"><h2 id="experiences-title" data-en="Beyond the game." data-ar="مو بس ألعاب.">Beyond the game.</h2><span>04—06</span></div>
+<div class="section-heading"><h2 id="experiences-title" data-en="Beyond the game." data-ar="مو بس ألعاب.">مو بس ألعاب.</h2><span>04—06</span></div>
 <div class="other-grid">
-<article class="card experience"><div class="card-top"><span data-en="Cinema" data-ar="سينما">Cinema</span><span class="number">04</span></div><div class="symbol" aria-hidden="true">PLAY.</div><div><h3 data-en="Movie time." data-ar="وقت السينما.">Movie time.</h3><p data-en="Switch from playing the story to watching one. Discover the cinema experience at SOUND." data-ar="بدّل جو اللعب بجو الأفلام. اكتشف تجربة السينما في ساوند.">Switch from playing the story to watching one. Discover the cinema experience at SOUND.</p></div></article>
-<article class="card experience"><div class="card-top"><span data-en="Billiards" data-ar="بليارد">Billiards</span><span class="number">05</span></div><div class="symbol" aria-hidden="true">YOUR<br>SHOT.</div><div><h3 data-en="A different kind of match." data-ar="منافسة بطعم ثاني.">A different kind of match.</h3><p data-en="Step away from the screen and bring the competition to the table." data-ar="ابتعد عن الشاشة وانقل المنافسة لطاولة البليارد.">Step away from the screen and bring the competition to the table.</p></div></article>
-<article class="card experience"><div class="card-top"><span data-en="Café & restaurant" data-ar="كافيه ومطعم">Café & restaurant</span><span class="number">06</span></div><div class="symbol" aria-hidden="true">PAUSE.</div><div><h3 data-en="Recharge between rounds." data-ar="استراحة بين الجولات.">Recharge between rounds.</h3><p data-en="Take a break for something to eat or drink, then get back to what you love." data-ar="خذ استراحة للأكل أو المشروبات، وارجع للشي اللي تحبه.">Take a break for something to eat or drink, then get back to what you love.</p></div></article>
+<article class="card experience"><div class="card-top"><span data-en="Cinema" data-ar="سينما">سينما</span><span class="number">04</span></div><div class="symbol" aria-hidden="true">PLAY.</div><div><h3 data-en="Movie time." data-ar="اليوم جوّنا أفلام.">اليوم جوّنا أفلام.</h3><p data-en="Switch from playing the story to watching one. Discover the cinema experience at SOUND." data-ar="غيّر جو بعد اللعب. لُمّ ربعك واستمتعوا بوقتكم بالسينما.">غيّر جو بعد اللعب. لُمّ ربعك واستمتعوا بوقتكم بالسينما.</p></div></article>
+<article class="card experience"><div class="card-top"><span data-en="Billiards" data-ar="بليارد">بليارد</span><span class="number">05</span></div><div class="symbol" aria-hidden="true">YOUR<br>SHOT.</div><div><h3 data-en="A different kind of match." data-ar="خلّ نشوف لعبك.">خلّ نشوف لعبك.</h3><p data-en="Step away from the screen and bring the competition to the table." data-ar="اترك الشاشة شوي وتعال للطاولة. جولة بليارد ويّا ربعك إلها جو ثاني.">اترك الشاشة شوي وتعال للطاولة. جولة بليارد ويّا ربعك إلها جو ثاني.</p></div></article>
+<article class="card experience"><div class="card-top"><span data-en="Café & restaurant" data-ar="كافيه ومطعم">كافيه ومطعم</span><span class="number">06</span></div><div class="symbol" aria-hidden="true">PAUSE.</div><div><h3 data-en="Recharge between rounds." data-ar="استراحة على مزاجك.">استراحة على مزاجك.</h3><p data-en="Take a break for something to eat or drink, then get back to what you love." data-ar="جوعان؟ لو نفسك بقهوة؟ خذلك استراحة للأكل والشرب، وبعدين كمّل اللعب.">جوعان؟ لو نفسك بقهوة؟ خذلك استراحة للأكل والشرب، وبعدين كمّل اللعب.</p></div></article>
 </div></section></div>
-<div class="closing"><p><span data-en="PLAY" data-ar="العب">PLAY</span> <b data-en="IN HARMONY." data-ar="بانسجام.">IN HARMONY.</b></p><a href="#top" aria-label="Back to top">↑</a></div>
+<div class="closing"><p><span data-en="PLAY" data-ar="لعب، لَمّة،">لعب، لَمّة،</span> <b data-en="IN HARMONY." data-ar="وجو حلو.">وجو حلو.</b></p><a href="#top" aria-label="Back to top">↑</a></div>
 </main>
-<footer class="wrap"><a href="#top" class="wordmark" aria-label="SOUND home">sound<span>.</span></a><p data-en="SOUND · Gaming, café & good company." data-ar="ساوند · ألعاب، كافيه وأوقات حلوة.">SOUND · Gaming, café & good company.</p></footer>
+<footer class="wrap"><a href="#top" class="wordmark" aria-label="SOUND home">sound<span>.</span></a><p data-en="SOUND · Gaming, café & good company." data-ar="ساوند · لعب وقهوة ولَمّة حلوة.">ساوند · لعب وقهوة ولَمّة حلوة.</p></footer>
 <script>
 (function(){
   var wave=document.querySelector('.signal');
   for(var i=0;i<96;i++){var bar=document.createElement('i');var height=12+Math.abs(Math.sin(i*.37)*Math.cos(i*.12))*66;bar.style.setProperty('--h',height+'px');bar.style.setProperty('--o',String(.2+Math.abs(Math.sin(i*.13))*.65));wave.appendChild(bar)}
   var button=document.getElementById('language');
-  var lang='en';
+  var lang='ar';
   function setLanguage(next){
     lang=next;document.documentElement.lang=lang;document.documentElement.dir=lang==='ar'?'rtl':'ltr';
     document.querySelectorAll('[data-en][data-ar]').forEach(function(el){el.textContent=el.getAttribute('data-'+lang)});
     button.textContent=lang==='en'?'العربية':'English';
     button.setAttribute('aria-label',lang==='en'?'Switch to Arabic':'Switch to English');
-    document.title=lang==='en'?'SOUND — Play in harmony':'ساوند — العب بانسجام';
+    document.title=lang==='en'?'SOUND — Play in harmony':'ساوند — لعب وقهوة ولَمّة حلوة';
+    document.querySelector('.navlinks').setAttribute('aria-label',lang==='en'?'Main navigation':'التنقّل الرئيسي');
+    document.querySelector('.section-nav').setAttribute('aria-label',lang==='en'?'Catalog categories':'أقسام ساوند');
+    document.querySelectorAll('.wordmark').forEach(function(el){el.setAttribute('aria-label',lang==='en'?'SOUND home':'ساوند — الرئيسية')});
+    document.querySelector('meta[name="description"]').content=lang==='en'?'Explore SOUND: PlayStation 5, gaming PCs, VIP PC room, cinema, billiards and café.':'شوف شنو عدنا بساوند: بلايستيشن 5، بي سي، غرفة VIP، سينما، بليارد وكافيه.';
     document.querySelector('.closing a').setAttribute('aria-label',lang==='en'?'Back to top':'العودة للأعلى');
-    try{localStorage.setItem('sound-language',lang)}catch(e){}
+    try{localStorage.setItem('sound-menu-language-v2',lang)}catch(e){}
   }
   button.addEventListener('click',function(){setLanguage(lang==='en'?'ar':'en')});
-  try{if(localStorage.getItem('sound-language')==='ar')setLanguage('ar')}catch(e){}
+  var initial='ar';
+  try{if(localStorage.getItem('sound-menu-language-v2')==='en')initial='en'}catch(e){}
+  setLanguage(initial);
 })();
 </script>
 </body>
