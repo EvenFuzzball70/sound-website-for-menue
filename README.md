@@ -1,29 +1,31 @@
-# SOUND website
+# SOUND menu website
 
-A lightweight, responsive, bilingual English/Arabic catalog for SOUND. Plain HTML, CSS and JavaScript; no installation, API keys, paid services or build step required.
+A standalone public catalog for SOUND's Instagram bio link.
 
-## Preview
+## Cloudflare Worker deployment
 
-Open `index.html` in a browser, or serve this directory with any static web server. For example, with Python installed: `python3 -m http.server 8000`, then visit `http://localhost:8000`.
+1. Open Cloudflare Dashboard.
+2. Go to **Workers & Pages** and choose **Create application**.
+3. Choose **Workers**, then deploy from an existing GitHub repository if that option is available. Select `EvenFuzzball70/sound-website-for-menue` and the `main` branch.
+4. If Cloudflare asks for a build command, leave it empty. The repository is plain HTML and needs no build.
+5. The Worker name should be `sound-menu`, matching `wrangler.toml`.
+6. Deploy, then open the generated `*.workers.dev` URL.
+7. Add a custom domain such as `menu.soundcafe.app` from the Worker's **Settings > Domains & Routes**.
 
-## Hosting
+CLI alternative:
 
-Deploy the repository root as a static website. On GitHub Pages, select Settings > Pages > Deploy from a branch, then select the default branch and root directory. Publishing is not automatically enabled by this repository.
+```bash
+npm install
+npx wrangler login
+npx wrangler deploy
+```
+
+The existing `sound-project-done-and-paid` repository is a separate internal management system and must not be replaced by this menu site. It contains the older `sound` Worker configuration and D1-backed payroll/expenses application.
 
 ## Included
 
-- Responsive service catalog: PS5, gaming PCs, VIP PC room, cinema, billiards, café and restaurant.
-- English/Arabic toggle with RTL layout and optional device-local language preference.
-- Keyboard focus styles, skip link, reduced-motion support and section navigation.
-- Brand colors: cyan #02CCFF, blue #000BFA, white #FFFFFF.
-- No runtime network dependencies, tracking, login, ordering or booking flow.
-
-## Client content still needed
-
-The wordmark is a temporary text treatment, not the exact supplied logo. Replace it with an approved exported logo when available. This implementation uses branding information provided in the conversation; PDF assets were not extracted in this environment.
-
-Confirm the service lineup before launch. Add approved venue photographs, menu items, prices, hardware specifications and contact details only when supplied. None of those details have been invented.
-
-## Verification
-
-JavaScript syntax, unique element IDs and internal anchor destinations were checked programmatically. Browser rendering and device testing remain to be performed; no live deployment was created as part of the initial commit.
+- PS5, gaming PC and VIP PC room catalog
+- Cinema, billiards, café and restaurant sections
+- English/Arabic language switch with RTL support
+- Responsive mobile-first layout
+- No prices, hardware specifications, booking flow or contact details invented
