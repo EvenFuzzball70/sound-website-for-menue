@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="theme-color" content="#f5f9ff">
-<meta name="description" content="شوف شنو عدنا بساوند: بلايستيشن 5، بي سي، غرفة VIP، سينما، بليارد وكافيه. اختار جوّك وتعال ويّا ربعك.">
+<meta name="description" content="شوف الأقسام والأسعار بساوند: بلايستيشن 5، بي سي، غرفة VIP، سينما، بليارد وكافيه. اختار جوّك وتعال ويّا ربعك.">
 <title>ساوند — لعب وقهوة ولَمّة حلوة</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -97,39 +97,94 @@ footer .wordmark{color:var(--blue)}
 .photo-credits a{text-decoration:underline;text-underline-offset:3px}
 .photo-credits p{direction:ltr;text-align:start;line-height:2}
 @media(max-width:760px){.console .card-photo{min-height:0;flex:none;aspect-ratio:4/3}.card-photo{margin:16px 0 20px}.experience .card-photo{aspect-ratio:3/2}.console{min-height:0}.experience{min-height:0}}
+
+/* Price-led catalog: matching card sizes and gaming venue imagery. */
+.menu-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:24px}
+.menu-card{min-height:0;justify-content:flex-start;padding:24px}
+.menu-card .card-photo{flex:none;min-height:0;max-height:none;aspect-ratio:16/10;margin:18px 0 24px}
+.menu-card .card-photo img{object-fit:cover;object-position:center}
+.menu-card h3{margin-bottom:18px}
+.menu-blue{background:linear-gradient(135deg,#000bfa,#174fed);color:white}
+.menu-blue .card-top{color:#e6edff}
+.price-list{margin:0;margin-top:auto}
+.price-row{display:flex;align-items:center;justify-content:space-between;gap:14px;padding:17px 0;border-top:1px solid #d2dfef}
+.price-row dt{font-weight:600}
+.price-row dd{margin:0;white-space:nowrap;font-size:15px}
+.price-row dd b{font-size:28px;font-weight:800;unicode-bidi:isolate}
+.price-row small{display:block;color:var(--muted);text-align:end;font-size:12px}
+.menu-blue .price-row{border-color:#728bff}
+.menu-blue .price-row small{color:#e5edff}
+.menu-intro{color:var(--muted);margin:0 0 24px}
+.menu-card .vip-note{font-size:13px;border-top:1px solid var(--line);padding-top:12px;margin-top:8px}
+.section-nav a:first-child{background:white;border-color:var(--line);color:#34445f}
+.section-nav a:hover{background:#e1f7ff}
+.section-heading>span{font-family:inherit}
+@media(max-width:760px){.menu-grid{grid-template-columns:1fr;gap:16px}.menu-card{padding:20px}.menu-card .card-photo{aspect-ratio:3/2}.price-row dd b{font-size:25px}.section-heading{align-items:start;flex-wrap:wrap}}
 </style>
 </head>
 <body id="top">
 <a href="#lineup" class="skip" data-en="Skip to the lineup" data-ar="روح للأقسام">روح للأقسام</a>
 <header><div class="wrap nav">
 <a class="wordmark" href="#top" aria-label="SOUND home">sound<span>.</span></a>
-<nav class="navlinks" aria-label="Main navigation"><a href="#gaming" data-en="Gaming" data-ar="الألعاب">الألعاب</a><a href="#experiences" data-en="More at SOUND" data-ar="بعد شنو عدنا؟">بعد شنو عدنا؟</a></nav>
+<nav class="navlinks" aria-label="Main navigation"><a href="#gaming" data-en="Gaming" data-ar="الألعاب">الألعاب</a><a href="#experiences" data-en="More at SOUND" data-ar="الأسعار">الأسعار</a></nav>
 <button class="language" id="language" type="button" aria-label="Switch to English">English</button>
 </div></header>
 <main class="wrap">
 <section class="hero" aria-labelledby="hero-title">
 <div class="hero-top" data-en="Gaming · Café · Good company" data-ar="لعب · قهوة · لَمّة حلوة">لعب · قهوة · لَمّة حلوة</div>
 <h1 id="hero-title"><span data-en="SOUND LEADS" data-ar="اللعب إلك.">اللعب إلك.</span><br><em data-en="THE GAME." data-ar="والجو علينا.">والجو علينا.</em></h1>
-<div class="hero-bottom"><p data-en="Your game. Your space. Find your next session at SOUND." data-ar="بلايستيشن، بي سي، سينما وبليارد. تعال ويّا ربعك، واختاروا جوّكم بساوند.">بلايستيشن، بي سي، سينما وبليارد. تعال ويّا ربعك، واختاروا جوّكم بساوند.</p><a class="browse" href="#lineup"><b data-en="Explore the lineup" data-ar="شوف شنو عدنا">شوف شنو عدنا</b><span aria-hidden="true">↓</span></a></div>
+<div class="hero-bottom"><p data-en="Your game. Your space. Find your next session at SOUND." data-ar="بلي، حاسبات، سينما، بليارد وسنوكر وVR. شوف الأسعار واختار قعدتك بساوند.">بلي، حاسبات، سينما، بليارد وسنوكر وVR. شوف الأسعار واختار قعدتك بساوند.</p><a class="browse" href="#lineup"><b data-en="Explore the lineup" data-ar="شوف الأقسام والأسعار">شوف الأقسام والأسعار</b><span aria-hidden="true">↓</span></a></div>
 <div class="signal" aria-hidden="true"></div>
 </section>
 <div id="lineup">
-<nav class="section-nav" aria-label="Catalog categories"><a href="#gaming" data-en="The lineup" data-ar="كل الأقسام">كل الأقسام</a><a href="#ps5" data-en="PlayStation 5" data-ar="بلايستيشن 5">بلايستيشن 5</a><a href="#pc" data-en="Gaming PCs" data-ar="بي سي">بي سي</a><a href="#vip" data-en="VIP PC room" data-ar="غرفة بي سي VIP">غرفة بي سي VIP</a><a href="#experiences" data-en="Cinema & more" data-ar="سينما وبليارد وكافيه">سينما وبليارد وكافيه</a></nav>
+<nav class="section-nav" aria-label="أقسام ساوند"><a href="#ps5"><span data-ar="البلي" data-en="PlayStation">البلي</span></a><a href="#pc"><span data-ar="الحاسبات" data-en="Gaming PCs">الحاسبات</span></a><a href="#cinema"><span data-ar="السينما" data-en="Cinema">السينما</span></a><a href="#billiards"><span data-ar="البلياردو والسنوكر" data-en="Billiards & snooker">البلياردو والسنوكر</span></a><a href="#vr"><span data-ar="الواقع الافتراضي" data-en="Virtual reality">الواقع الافتراضي</span></a><a href="#cafe"><span data-ar="الكافيه والمطعم" data-en="Café & restaurant">الكافيه والمطعم</span></a></nav>
 <section class="section" id="gaming" aria-labelledby="gaming-title">
-<div class="section-heading"><h2 id="gaming-title" data-en="Choose your game." data-ar="شنو تلعب اليوم؟">شنو تلعب اليوم؟</h2><span>01—03</span></div>
-<div class="gaming-grid">
-<article class="card console" id="ps5"><div class="card-top"><span data-en="Console gaming" data-ar="بلايستيشن">بلايستيشن</span><span class="number">01</span></div><figure class="card-photo"><span class="photo-fallback" aria-hidden="true">PS5</span><img src="https://images.unsplash.com/photo-1622297845775-5ff3fef71d13?auto=format&amp;fit=crop&amp;w=960&amp;q=80" srcset="https://images.unsplash.com/photo-1622297845775-5ff3fef71d13?auto=format&amp;fit=crop&amp;w=480&amp;q=75 480w, https://images.unsplash.com/photo-1622297845775-5ff3fef71d13?auto=format&amp;fit=crop&amp;w=960&amp;q=80 960w" sizes="(max-width: 760px) 90vw, 45vw" width="960" height="640" loading="lazy" decoding="async" alt="صورة توضيحية لبلايستيشن 5 ووحدة التحكّم" data-alt-ar="صورة توضيحية لبلايستيشن 5 ووحدة التحكّم" data-alt-en="Illustrative photo of a PlayStation 5 and controller" onerror="this.hidden=true"></figure><div class="display-caption" aria-hidden="true" data-en="PLAY TOGETHER" data-ar="اللعب يحلى ويّا الربع">اللعب يحلى ويّا الربع</div><div class="card-bottom"><div><h3 data-en="PlayStation 5" data-ar="بلايستيشن 5">بلايستيشن 5</h3><p data-en="Settle in, pick your side and make it a match to remember." data-ar="لُمّ ربعك، اختار فريقك وخلّ التحدّي يبدي. منو يفوز هالمرّة؟">لُمّ ربعك، اختار فريقك وخلّ التحدّي يبدي. منو يفوز هالمرّة؟</p></div></div></article>
-<article class="card pc" id="pc"><div class="card-top"><span data-en="PC gaming" data-ar="ألعاب البي سي">ألعاب البي سي</span><span class="number">02</span></div><figure class="card-photo"><span class="photo-fallback" aria-hidden="true">PC</span><img src="https://images.unsplash.com/photo-1691580438246-a6e5cb35ca05?auto=format&amp;fit=crop&amp;w=960&amp;q=80" srcset="https://images.unsplash.com/photo-1691580438246-a6e5cb35ca05?auto=format&amp;fit=crop&amp;w=480&amp;q=75 480w, https://images.unsplash.com/photo-1691580438246-a6e5cb35ca05?auto=format&amp;fit=crop&amp;w=960&amp;q=80 960w" sizes="(max-width: 760px) 90vw, 45vw" width="960" height="640" loading="lazy" decoding="async" alt="صورة توضيحية لتجميعة بي سي للألعاب" data-alt-ar="صورة توضيحية لتجميعة بي سي للألعاب" data-alt-en="Illustrative photo of a gaming PC setup" onerror="this.hidden=true"></figure><div><h3 data-en="Get in the game." data-ar="جهّز السكواد.">جهّز السكواد.</h3><p data-en="A space for your next match, your favorite games and your whole squad." data-ar="ألعابك المفضّلة، ربعك وياك، والتحدّي حاضر. اختار لعبتك وابدأ الجولة.">ألعابك المفضّلة، ربعك وياك، والتحدّي حاضر. اختار لعبتك وابدأ الجولة.</p></div></article>
-<article class="card vip" id="vip"><div class="card-top"><span data-en="VIP PC room" data-ar="غرفة بي سي VIP">غرفة بي سي VIP</span><span class="number">03</span></div><div class="display-type" aria-hidden="true">VIP</div><div><h3 data-en="Your own zone." data-ar="لعب على مزاجك.">لعب على مزاجك.</h3><p data-en="Take your session into the VIP PC room. More room to focus on your game." data-ar="تريد جو أخصّ؟ غرفة البي سي VIP إلك ولربعك، حتى تاخذون راحتكم باللعب.">تريد جو أخصّ؟ غرفة البي سي VIP إلك ولربعك، حتى تاخذون راحتكم باللعب.</p></div></article>
-</div></section>
-<section class="section" id="experiences" aria-labelledby="experiences-title">
-<div class="section-heading"><h2 id="experiences-title" data-en="Beyond the game." data-ar="مو بس ألعاب.">مو بس ألعاب.</h2><span>04—06</span></div>
-<div class="other-grid">
-<article class="card experience"><div class="card-top"><span data-en="Cinema" data-ar="سينما">سينما</span><span class="number">04</span></div><figure class="card-photo"><span class="photo-fallback" aria-hidden="true">CINEMA</span><img src="https://images.unsplash.com/photo-1766844649143-af98d71e346b?auto=format&amp;fit=crop&amp;w=960&amp;q=80" srcset="https://images.unsplash.com/photo-1766844649143-af98d71e346b?auto=format&amp;fit=crop&amp;w=480&amp;q=75 480w, https://images.unsplash.com/photo-1766844649143-af98d71e346b?auto=format&amp;fit=crop&amp;w=960&amp;q=80 960w" sizes="(max-width: 760px) 90vw, 45vw" width="960" height="640" loading="lazy" decoding="async" alt="صورة توضيحية لقاعة سينما" data-alt-ar="صورة توضيحية لقاعة سينما" data-alt-en="Illustrative photo of a cinema" onerror="this.hidden=true"></figure><div><h3 data-en="Movie time." data-ar="اليوم جوّنا أفلام.">اليوم جوّنا أفلام.</h3><p data-en="Switch from playing the story to watching one. Discover the cinema experience at SOUND." data-ar="غيّر جو بعد اللعب. لُمّ ربعك واستمتعوا بوقتكم بالسينما.">غيّر جو بعد اللعب. لُمّ ربعك واستمتعوا بوقتكم بالسينما.</p></div></article>
-<article class="card experience"><div class="card-top"><span data-en="Billiards" data-ar="بليارد">بليارد</span><span class="number">05</span></div><figure class="card-photo"><span class="photo-fallback" aria-hidden="true">BILLIARDS</span><img src="https://images.unsplash.com/photo-1776513726354-a2cbbd951ef7?auto=format&amp;fit=crop&amp;w=960&amp;q=80" srcset="https://images.unsplash.com/photo-1776513726354-a2cbbd951ef7?auto=format&amp;fit=crop&amp;w=480&amp;q=75 480w, https://images.unsplash.com/photo-1776513726354-a2cbbd951ef7?auto=format&amp;fit=crop&amp;w=960&amp;q=80 960w" sizes="(max-width: 760px) 90vw, 45vw" width="960" height="640" loading="lazy" decoding="async" alt="صورة توضيحية للعب البليارد" data-alt-ar="صورة توضيحية للعب البليارد" data-alt-en="Illustrative photo of billiards" onerror="this.hidden=true"></figure><div><h3 data-en="A different kind of match." data-ar="خلّ نشوف لعبك.">خلّ نشوف لعبك.</h3><p data-en="Step away from the screen and bring the competition to the table." data-ar="اترك الشاشة شوي وتعال للطاولة. جولة بليارد ويّا ربعك إلها جو ثاني.">اترك الشاشة شوي وتعال للطاولة. جولة بليارد ويّا ربعك إلها جو ثاني.</p></div></article>
-<article class="card experience"><div class="card-top"><span data-en="Café & restaurant" data-ar="كافيه ومطعم">كافيه ومطعم</span><span class="number">06</span></div><figure class="card-photo"><span class="photo-fallback" aria-hidden="true">CAFÉ</span><img src="https://images.unsplash.com/photo-1413745094207-a01b234cc32f?auto=format&amp;fit=crop&amp;w=960&amp;q=80" srcset="https://images.unsplash.com/photo-1413745094207-a01b234cc32f?auto=format&amp;fit=crop&amp;w=480&amp;q=75 480w, https://images.unsplash.com/photo-1413745094207-a01b234cc32f?auto=format&amp;fit=crop&amp;w=960&amp;q=80 960w" sizes="(max-width: 760px) 90vw, 45vw" width="960" height="640" loading="lazy" decoding="async" alt="صورة توضيحية لفنجان قهوة" data-alt-ar="صورة توضيحية لفنجان قهوة" data-alt-en="Illustrative photo of a cup of coffee" onerror="this.hidden=true"></figure><div><h3 data-en="Recharge between rounds." data-ar="استراحة على مزاجك.">استراحة على مزاجك.</h3><p data-en="Take a break for something to eat or drink, then get back to what you love." data-ar="جوعان؟ لو نفسك بقهوة؟ خذلك استراحة للأكل والشرب، وبعدين كمّل اللعب.">جوعان؟ لو نفسك بقهوة؟ خذلك استراحة للأكل والشرب، وبعدين كمّل اللعب.</p></div></article>
-</div></section></div>
-<aside class="photo-note"><p data-en="Photos are illustrative stock images, not photographs of SOUND or its actual facilities." data-ar="الصور توضيحية، مو صور فعلية لساوند أو لتجهيزاته.">الصور توضيحية، مو صور فعلية لساوند أو لتجهيزاته.</p><details class="photo-credits"><summary data-en="Photo credits · Unsplash" data-ar="مصادر الصور · Unsplash">مصادر الصور · Unsplash</summary><p><a href="https://unsplash.com/photos/white-playstation-five-console-and-controller-ads33nL7V4k" target="_blank" rel="noopener noreferrer">Nik</a> · <a href="https://unsplash.com/photos/a-desk-with-a-computer-monitor-keyboard-and-mouse-cIc77ToUA6Y" target="_blank" rel="noopener noreferrer">Jaime Marrero</a> · <a href="https://unsplash.com/photos/empty-movie-theater-with-a-lit-screen-dXpJeKIWfGs" target="_blank" rel="noopener noreferrer">Rapha Wilde</a> · <a href="https://unsplash.com/photos/a-person-playing-billiards-in-a-dimly-lit-room-H-3pTksDZEw" target="_blank" rel="noopener noreferrer">jackson kondili</a> · <a href="https://unsplash.com/photos/coffee-latte-in-white-ceramic-mug-tZKwLRO904E" target="_blank" rel="noopener noreferrer">Drew Coffman</a></p></details></aside>
+<div class="section-heading"><h2 id="gaming-title" data-ar="اختار جوّك. شوف الأسعار." data-en="Your session. Your choice.">اختار جوّك. شوف الأسعار.</h2><span data-ar="بالدينار العراقي" data-en="Prices in IQD">بالدينار العراقي</span></div>
+<p class="menu-intro" id="experiences"><span data-ar="كل الأسعار للساعة. أسعار السينما حسب عدد الأشخاص الموضّح." data-en="All rates are hourly. Cinema rates are for the group size shown.">كل الأسعار للساعة. أسعار السينما حسب عدد الأشخاص الموضّح.</span></p>
+<div class="menu-grid"><article class="card menu-card menu-blue" id="ps5">
+<div class="card-top"><span data-ar="البلي" data-en="PlayStation">البلي</span><span class="number">01</span></div>
+<figure class="card-photo"><span class="photo-fallback" aria-hidden="true">SOUND</span><img src="https://images.pexels.com/photos/7862267/pexels-photo-7862267.jpeg?auto=compress&amp;w=960" srcset="https://images.pexels.com/photos/7862267/pexels-photo-7862267.jpeg?auto=compress&amp;w=480 480w, https://images.pexels.com/photos/7862267/pexels-photo-7862267.jpeg?auto=compress&amp;w=960 960w" sizes="(max-width:760px) 90vw, (max-width:1360px) 44vw, 590px" width="960" height="640" loading="lazy" decoding="async" alt="صورة توضيحية للعب الجماعي" data-alt-ar="صورة توضيحية للعب الجماعي" data-alt-en="Illustrative social gaming photo" onerror="this.hidden=true"></figure>
+<h3 data-ar="البلي" data-en="PlayStation">البلي</h3>
+<dl class="price-list"><div class="price-row"><dt><span data-ar="الساعة" data-en="Per hour">الساعة</span></dt><dd data-price="5000"><b data-ar="٥٬٠٠٠" data-en="5,000">٥٬٠٠٠</b> <span data-ar="د.ع" data-en="IQD">د.ع</span><small><span data-ar="للساعة" data-en="/ hour">للساعة</span></small></dd></div></dl>
+
+</article>
+<article class="card menu-card " id="pc">
+<div class="card-top"><span data-ar="الحاسبات" data-en="Gaming PCs">الحاسبات</span><span class="number">02</span></div>
+<figure class="card-photo"><span class="photo-fallback" aria-hidden="true">SOUND</span><img src="https://images.pexels.com/photos/9072394/pexels-photo-9072394.jpeg?auto=compress&amp;w=960" srcset="https://images.pexels.com/photos/9072394/pexels-photo-9072394.jpeg?auto=compress&amp;w=480 480w, https://images.pexels.com/photos/9072394/pexels-photo-9072394.jpeg?auto=compress&amp;w=960 960w" sizes="(max-width:760px) 90vw, (max-width:1360px) 44vw, 590px" width="960" height="640" loading="lazy" decoding="async" alt="صورة توضيحية لصالة حاسبات ألعاب" data-alt-ar="صورة توضيحية لصالة حاسبات ألعاب" data-alt-en="Illustrative gaming room photo" onerror="this.hidden=true"></figure>
+<h3 data-ar="الحاسبات" data-en="Gaming PCs">الحاسبات</h3>
+<dl class="price-list"><div class="price-row"><dt><span data-ar="أيليت" data-en="Elite">أيليت</span></dt><dd data-price="2500"><b data-ar="٢٬٥٠٠" data-en="2,500">٢٬٥٠٠</b> <span data-ar="د.ع" data-en="IQD">د.ع</span><small><span data-ar="للساعة" data-en="/ hour">للساعة</span></small></dd></div><div class="price-row"><dt><span data-ar="الماستر" data-en="Master">الماستر</span></dt><dd data-price="3500"><b data-ar="٣٬٥٠٠" data-en="3,500">٣٬٥٠٠</b> <span data-ar="د.ع" data-en="IQD">د.ع</span><small><span data-ar="للساعة" data-en="/ hour">للساعة</span></small></dd></div></dl>
+<p class="vip-note" id="vip"><span data-ar="ومتوفرة غرفة بي سي VIP." data-en="A VIP PC room is also available.">ومتوفرة غرفة بي سي VIP.</span></p>
+</article>
+<article class="card menu-card " id="cinema">
+<div class="card-top"><span data-ar="السينما" data-en="Cinema">السينما</span><span class="number">03</span></div>
+<figure class="card-photo"><span class="photo-fallback" aria-hidden="true">SOUND</span><img src="https://images.unsplash.com/photo-1766844649143-af98d71e346b?auto=format&amp;w=960" srcset="https://images.unsplash.com/photo-1766844649143-af98d71e346b?auto=format&amp;w=480 480w, https://images.unsplash.com/photo-1766844649143-af98d71e346b?auto=format&amp;w=960 960w" sizes="(max-width:760px) 90vw, (max-width:1360px) 44vw, 590px" width="960" height="640" loading="lazy" decoding="async" alt="صورة توضيحية لسينما" data-alt-ar="صورة توضيحية لسينما" data-alt-en="Illustrative cinema photo" onerror="this.hidden=true"></figure>
+<h3 data-ar="السينما" data-en="Cinema">السينما</h3>
+<dl class="price-list"><div class="price-row"><dt><span data-ar="٤ أشخاص" data-en="4 people">٤ أشخاص</span></dt><dd data-price="10000"><b data-ar="١٠٬٠٠٠" data-en="10,000">١٠٬٠٠٠</b> <span data-ar="د.ع" data-en="IQD">د.ع</span><small><span data-ar="للساعة" data-en="/ hour">للساعة</span></small></dd></div><div class="price-row"><dt><span data-ar="١٠ أشخاص" data-en="10 people">١٠ أشخاص</span></dt><dd data-price="30000"><b data-ar="٣٠٬٠٠٠" data-en="30,000">٣٠٬٠٠٠</b> <span data-ar="د.ع" data-en="IQD">د.ع</span><small><span data-ar="للساعة" data-en="/ hour">للساعة</span></small></dd></div></dl>
+
+</article>
+<article class="card menu-card " id="billiards">
+<div class="card-top"><span data-ar="البلياردو والسنوكر" data-en="Billiards & snooker">البلياردو والسنوكر</span><span class="number">04</span></div>
+<figure class="card-photo"><span class="photo-fallback" aria-hidden="true">SOUND</span><img src="https://images.unsplash.com/photo-1776513726354-a2cbbd951ef7?auto=format&amp;w=960" srcset="https://images.unsplash.com/photo-1776513726354-a2cbbd951ef7?auto=format&amp;w=480 480w, https://images.unsplash.com/photo-1776513726354-a2cbbd951ef7?auto=format&amp;w=960 960w" sizes="(max-width:760px) 90vw, (max-width:1360px) 44vw, 590px" width="960" height="640" loading="lazy" decoding="async" alt="صورة توضيحية للبليارد" data-alt-ar="صورة توضيحية للبليارد" data-alt-en="Illustrative billiards photo" onerror="this.hidden=true"></figure>
+<h3 data-ar="البلياردو والسنوكر" data-en="Billiards & snooker">البلياردو والسنوكر</h3>
+<dl class="price-list"><div class="price-row"><dt><span data-ar="البليارد زون" data-en="Billiards zone">البليارد زون</span></dt><dd data-price="6000"><b data-ar="٦٬٠٠٠" data-en="6,000">٦٬٠٠٠</b> <span data-ar="د.ع" data-en="IQD">د.ع</span><small><span data-ar="للساعة" data-en="/ hour">للساعة</span></small></dd></div><div class="price-row"><dt><span data-ar="السنوكر زون" data-en="Snooker zone">السنوكر زون</span></dt><dd data-price="15000"><b data-ar="١٥٬٠٠٠" data-en="15,000">١٥٬٠٠٠</b> <span data-ar="د.ع" data-en="IQD">د.ع</span><small><span data-ar="للساعة" data-en="/ hour">للساعة</span></small></dd></div></dl>
+
+</article>
+<article class="card menu-card " id="vr">
+<div class="card-top"><span data-ar="الواقع الافتراضي" data-en="Virtual reality">الواقع الافتراضي</span><span class="number">05</span></div>
+<figure class="card-photo"><span class="photo-fallback" aria-hidden="true">SOUND</span><img src="https://images.pexels.com/photos/6498961/pexels-photo-6498961.jpeg?auto=compress&amp;w=960" srcset="https://images.pexels.com/photos/6498961/pexels-photo-6498961.jpeg?auto=compress&amp;w=480 480w, https://images.pexels.com/photos/6498961/pexels-photo-6498961.jpeg?auto=compress&amp;w=960 960w" sizes="(max-width:760px) 90vw, (max-width:1360px) 44vw, 590px" width="960" height="640" loading="lazy" decoding="async" alt="صورة توضيحية للواقع الافتراضي بصالة ألعاب" data-alt-ar="صورة توضيحية للواقع الافتراضي بصالة ألعاب" data-alt-en="Illustrative VR arcade photo" onerror="this.hidden=true"></figure>
+<h3 data-ar="الواقع الافتراضي" data-en="Virtual reality">الواقع الافتراضي</h3>
+<dl class="price-list"><div class="price-row"><dt><span data-ar="الساعة" data-en="Per hour">الساعة</span></dt><dd data-price="20000"><b data-ar="٢٠٬٠٠٠" data-en="20,000">٢٠٬٠٠٠</b> <span data-ar="د.ع" data-en="IQD">د.ع</span><small><span data-ar="للساعة" data-en="/ hour">للساعة</span></small></dd></div></dl>
+
+</article>
+<article class="card menu-card " id="cafe">
+<div class="card-top"><span data-ar="الكافيه والمطعم" data-en="Café & restaurant">الكافيه والمطعم</span><span class="number">06</span></div>
+<figure class="card-photo"><span class="photo-fallback" aria-hidden="true">SOUND</span><img src="https://images.unsplash.com/photo-1413745094207-a01b234cc32f?auto=format&amp;w=960" srcset="https://images.unsplash.com/photo-1413745094207-a01b234cc32f?auto=format&amp;w=480 480w, https://images.unsplash.com/photo-1413745094207-a01b234cc32f?auto=format&amp;w=960 960w" sizes="(max-width:760px) 90vw, (max-width:1360px) 44vw, 590px" width="960" height="640" loading="lazy" decoding="async" alt="صورة توضيحية للقهوة" data-alt-ar="صورة توضيحية للقهوة" data-alt-en="Illustrative coffee photo" onerror="this.hidden=true"></figure>
+<h3 data-ar="الكافيه والمطعم" data-en="Café & restaurant">الكافيه والمطعم</h3>
+<p data-ar="خذلك استراحة للأكل والشرب، وبعدين كمّل اللعب." data-en="Take a break for food and drinks, then get back to your game.">خذلك استراحة للأكل والشرب، وبعدين كمّل اللعب.</p>
+
+</article></div>
+</section></div>
+<aside class="photo-note"><p data-en="Photos are illustrative stock images, not photographs of SOUND or its actual facilities." data-ar="الصور توضيحية، مو صور فعلية لساوند أو لتجهيزاته.">الصور توضيحية، مو صور فعلية لساوند أو لتجهيزاته.</p><details class="photo-credits"><summary><span data-ar="مصادر الصور" data-en="Photo credits">مصادر الصور</span></summary><p><a href="https://www.pexels.com/photo/gaming-setup-for-competitive-esports-9072394/" target="_blank" rel="noopener noreferrer">Gaming room · Yan Krukau / Pexels</a> · <a href="https://www.pexels.com/photo/two-men-holding-controllers-sitting-on-couch-in-a-room-with-neon-lights-7862267/" target="_blank" rel="noopener noreferrer">Console gaming · Pexels</a> · <a href="https://www.pexels.com/photo/man-playing-virtual-reality-game-6498961/" target="_blank" rel="noopener noreferrer">VR · Tima Miroshnichenko / Pexels</a> · <a href="https://unsplash.com/photos/dXpJeKIWfGs" target="_blank" rel="noopener noreferrer">Cinema · Rapha Wilde</a> · <a href="https://unsplash.com/photos/H-3pTksDZEw" target="_blank" rel="noopener noreferrer">Billiards · jackson kondili</a> · <a href="https://unsplash.com/photos/tZKwLRO904E" target="_blank" rel="noopener noreferrer">Coffee · Drew Coffman</a></p></details></aside>
 <div class="closing"><p><span data-en="PLAY" data-ar="لعب، لَمّة،">لعب، لَمّة،</span> <b data-en="IN HARMONY." data-ar="وجو حلو.">وجو حلو.</b></p><a href="#top" aria-label="Back to top">↑</a></div>
 </main>
 <footer class="wrap"><a href="#top" class="wordmark" aria-label="SOUND home">sound<span>.</span></a><p data-en="SOUND · Gaming, café & good company." data-ar="ساوند · لعب وقهوة ولَمّة حلوة.">ساوند · لعب وقهوة ولَمّة حلوة.</p></footer>
@@ -149,7 +204,7 @@ footer .wordmark{color:var(--blue)}
     document.querySelector('.navlinks').setAttribute('aria-label',lang==='en'?'Main navigation':'التنقّل الرئيسي');
     document.querySelector('.section-nav').setAttribute('aria-label',lang==='en'?'Catalog categories':'أقسام ساوند');
     document.querySelectorAll('.wordmark').forEach(function(el){el.setAttribute('aria-label',lang==='en'?'SOUND home':'ساوند — الرئيسية')});
-    document.querySelector('meta[name="description"]').content=lang==='en'?'Explore SOUND: PlayStation 5, gaming PCs, VIP PC room, cinema, billiards and café.':'شوف شنو عدنا بساوند: بلايستيشن 5، بي سي، غرفة VIP، سينما، بليارد وكافيه.';
+    document.querySelector('meta[name="description"]').content=lang==='en'?'Explore SOUND: PlayStation 5, gaming PCs, VIP PC room, cinema, billiards and café.':'شوف الأقسام والأسعار بساوند: بلايستيشن 5، بي سي، غرفة VIP، سينما، بليارد وكافيه.';
     document.querySelector('.closing a').setAttribute('aria-label',lang==='en'?'Back to top':'العودة للأعلى');
     try{localStorage.setItem('sound-menu-language-v2',lang)}catch(e){}
   }
