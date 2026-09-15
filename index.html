@@ -33,32 +33,22 @@ header{position:sticky;top:0;z-index:20;background:var(--surface);border-bottom:
 .language{border:1px solid var(--line);background:var(--surface);color:var(--ink);min-height:44px;padding:8px 16px;border-radius:24px;font-size:14px}
 .language:hover{border-color:var(--blue)}
 h1,h2,h3{font-weight:800;text-wrap:balance}
-.hero{display:grid;grid-template-columns:1.1fr 1fr;align-items:center;gap:12px 32px;margin-top:20px;padding:24px 28px 16px;background:var(--surface);border:0;border-radius:0}
-h1{font-size:clamp(40px,4.8vw,60px);line-height:1.4;margin:0;letter-spacing:0}
+.hero{display:flex;flex-direction:column;align-items:center;text-align:center;gap:12px;margin:0;padding:32px 16px 24px}
+h1{font-size:clamp(36px,5vw,56px);line-height:1.35;margin:0;letter-spacing:0}
 h1 em{font-style:normal;color:var(--blue)}
-[dir="ltr"] h1{font-size:clamp(38px,4.8vw,60px);line-height:1.12;letter-spacing:-.03em}
-.hero-bottom{display:flex;flex-direction:column;align-items:flex-start;gap:16px}
-.hero-bottom p{margin:0;color:var(--muted);font-size:16px;line-height:1.85;max-width:42ch}
+[dir="ltr"] h1{font-size:clamp(30px,4.6vw,50px);line-height:1.15;letter-spacing:-.03em;max-width:20ch}
+.hero-bottom{display:flex;flex-direction:column;align-items:center;gap:16px;width:100%}
+.hero-bottom p{margin:0;color:var(--muted);font-size:16px;line-height:1.8;max-width:48ch}
 .browse{display:inline-flex;align-items:center;justify-content:space-between;gap:20px;background:var(--blue);color:white;border-radius:10px;padding:12px 18px;min-height:48px;font-size:14px;font-weight:700}
 .browse:hover{background:#0014bd}
 .browse:focus-visible{outline-color:var(--ink)}
 .browse,.language,.section-nav a{transition:background-color 160ms var(--ease),border-color 160ms var(--ease),color 160ms var(--ease),transform 160ms var(--ease)}
 .browse:active,.language:active{transform:scale(.98)}
-.signal-row{grid-column:1/-1;display:flex;align-items:center;gap:12px;direction:ltr}
-.signal{height:40px;display:flex;align-items:center;gap:5px;flex:1;min-width:0;overflow:hidden;mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent)}
-.signal svg{display:block;flex:none;width:calc(100% + 60px);height:32px;animation:brand-wave 4s cubic-bezier(.4,0,.6,1) infinite;animation-play-state:paused}
-.signal[data-active="true"] svg{animation-play-state:running}
-@keyframes brand-wave{0%,100%{transform:translateX(-10px)}50%{transform:translateX(-40px)}}
-.motion-toggle{display:grid;place-items:center;flex-shrink:0;width:44px;height:44px;padding:0;background:transparent;border:1px solid var(--line);border-radius:50%;color:var(--muted)}
-.motion-toggle:hover{background:var(--bg);border-color:var(--ink)}
-.motion-toggle .play-icon{display:none}
-.motion-toggle[aria-pressed="true"] .pause-icon{display:none}
-.motion-toggle[aria-pressed="true"] .play-icon{display:block}
-.section-nav{position:sticky;top:var(--header-height);z-index:15;display:flex;gap:8px;overflow-x:auto;padding:12px 2px;background:var(--surface);border-bottom:1px solid var(--line);scrollbar-width:none;overscroll-behavior-x:contain}
+.section-nav{position:sticky;top:var(--header-height);z-index:15;display:flex;justify-content:center;gap:24px;overflow-x:auto;padding:0 2px;background:var(--surface);border-bottom:1px solid var(--line);scrollbar-width:none;overscroll-behavior-x:contain}
 .section-nav::-webkit-scrollbar{display:none}
-.section-nav a{display:inline-flex;align-items:center;white-space:nowrap;border:1px solid var(--line);border-radius:24px;padding:8px 16px;background:var(--surface);font-size:14px;min-height:44px}
-.section-nav a:hover{border-color:var(--blue);color:var(--blue)}
-.section-nav a[aria-current="location"]{background:var(--blue);color:white;border-color:var(--blue)}
+.section-nav a{display:inline-flex;align-items:center;white-space:nowrap;border:0;border-bottom:3px solid transparent;border-radius:0;padding:12px 2px 10px;background:transparent;font-size:14px;min-height:48px}
+.section-nav a:hover{color:var(--blue)}
+.section-nav a[aria-current="location"]{color:var(--blue);border-bottom-color:var(--blue);font-weight:700}
 .section{padding:24px 0 0}
 .section-heading{margin-bottom:4px}
 .section-heading h2{font-size:26px;line-height:1.55;margin:0}
@@ -99,13 +89,12 @@ footer p{color:var(--muted);font-size:12px;margin:0;text-align:end}
  :root{--header-height:64px}
  .wrap{width:calc(100% - 32px)}
  .nav{min-height:64px;gap:16px}.wordmark{width:104px}.navlinks{display:none}
- .hero{display:block;margin-top:16px;padding:20px 20px 12px}
- h1{font-size:clamp(34px,9.5vw,44px);line-height:1.4;margin-bottom:12px}
+ .hero{padding:24px 8px 20px;gap:10px}
+ h1{font-size:clamp(34px,9.5vw,44px);line-height:1.35;margin:0}
  [dir="ltr"] h1{font-size:clamp(32px,8.8vw,44px)}
- .hero-bottom{gap:14px}.hero-bottom p{max-width:none}
- .hero-bottom .browse{width:100%;font-size:14px}
- .signal-row{margin-top:12px;gap:8px}.signal{gap:3px}
- .section-nav a{padding-inline:14px}
+ .hero-bottom{gap:14px}.hero-bottom p{max-width:36ch;font-size:15px}
+ .hero-bottom .browse{font-size:14px;min-height:48px}
+ .section-nav{justify-content:flex-start;gap:20px}.section-nav a{padding-inline:2px;flex-shrink:0}
  .section{padding-top:20px}.section-heading h2{font-size:23px}
  .card-body{padding:18px 20px}
  .card h3{font-size:22px}
@@ -119,7 +108,7 @@ footer p{color:var(--muted);font-size:12px;margin:0;text-align:end}
  .price-row{gap:12px}
  footer{gap:16px}footer p{max-width:200px}
 }
-@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.signal svg{animation:none;transform:none}.browse,.language,.section-nav a{transition:none}.browse:active,.language:active{transform:none}.motion-toggle{display:none}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.browse,.language,.section-nav a{transition:none}.browse:active,.language:active{transform:none}}
 
 </style>
 </head>
@@ -133,9 +122,8 @@ footer p{color:var(--muted);font-size:12px;margin:0;text-align:end}
 <main class="wrap">
 <section class="hero" aria-labelledby="hero-title">
 
-<h1 id="hero-title"><span data-en="SOUND LEADS" data-ar="صوت">صوت</span><br><em data-en="THE GAME." data-ar="اللعبة">اللعبة</em></h1>
+<h1 id="hero-title"><span data-en="SOUND LEADS" data-ar="صوت">صوت</span> <em data-en="THE GAME." data-ar="اللعبة">اللعبة</em></h1>
 <div class="hero-bottom"><p data-en="Your game. Your space. Find your next session at SOUND." data-ar="بلي، حاسبات، سينما، بليارد وسنوكر وVR. شوف الأسعار واختار قعدتك بساوند.">بلي، حاسبات، سينما، بليارد وسنوكر وVR. شوف الأسعار واختار قعدتك بساوند.</p><a class="browse" href="#lineup"><b data-en="Explore the lineup" data-ar="شوف الأقسام والأسعار">شوف الأقسام والأسعار</b><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M12 4v16m-6-6 6 6 6-6"/></svg></a></div>
-<div class="signal-row"><div class="signal" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="225 397 1503 99" preserveAspectRatio="xMidYMid slice" aria-hidden="true" focusable="false"><path fill="#02ccff" fill-rule="nonzero" d="M1127.383,397.237 L1095.768,428.851 L1064.582,428.851 L1033.396,397.665 L908.081,397.665 L876.609,430.282 L1031.061,430.071 L1064.352,462.906 L1097.150,462.906 L1128.956,430.067 L1284.814,430.067 L1251.983,397.237 L1127.383,397.237"/><path fill="#02ccff" fill-rule="nonzero" d="M1568.871,397.237 L1537.256,428.851 L1506.070,428.851 L1474.885,397.665 L1349.569,397.665 L1318.097,430.282 L1472.549,430.071 L1505.839,462.906 L1538.638,462.906 L1570.445,430.067 L1726.303,430.067 L1693.471,397.237 L1568.871,397.237"/><path fill="#02ccff" fill-rule="nonzero" d="M686.150,397.237 L654.535,428.851 L623.349,428.851 L592.163,397.665 L466.848,397.665 L435.376,430.282 L589.828,430.071 L623.118,462.906 L655.917,462.906 L687.723,430.067 L843.581,430.067 L810.750,397.237 L686.150,397.237"/><path fill="#02ccff" fill-rule="nonzero" d="M244.145,397.237 L224.874,416.508 L224.874,451.588 L245.719,430.067 L401.577,430.067 L368.745,397.237 L244.145,397.237"/><path fill="#02ccff" fill-rule="nonzero" d="M656.077,462.694 L687.549,495.310 L812.864,495.310 L844.050,464.125 L875.236,464.125 L906.851,495.740 L1031.451,495.740 L1064.282,462.909 L908.425,462.909 L876.618,430.071 L843.820,430.071 L810.529,462.905 L656.077,462.694"/><path fill="#02ccff" fill-rule="nonzero" d="M402.926,430.070 L369.635,462.905 L224.875,462.706 L224.875,472.737 L246.655,495.310 L371.970,495.310 L403.156,464.124 L434.341,464.124 L465.957,495.739 L590.557,495.739 L623.388,462.908 L467.531,462.908 L435.724,430.070 L402.926,430.070"/><path fill="#02ccff" fill-rule="nonzero" d="M1097.616,462.694 L1129.088,495.310 L1254.403,495.310 L1285.589,464.125 L1316.775,464.125 L1348.390,495.740 L1472.990,495.740 L1505.821,462.909 L1349.964,462.909 L1318.157,430.071 L1285.359,430.071 L1252.068,462.905 L1097.616,462.694"/><path fill="#02ccff" fill-rule="nonzero" d="M1727.317,430.070 L1694.027,462.905 L1539.574,462.693 L1571.046,495.310 L1696.362,495.310 L1727.547,464.124 L1727.547,430.070 L1727.317,430.070"/></svg></div><button class="motion-toggle" type="button" aria-label="إيقاف حركة الموجة" aria-pressed="false"><svg class="pause-icon" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M8 5v14M16 5v14"/></svg><svg class="play-icon" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" aria-hidden="true"><path d="m8 5 11 7-11 7Z"/></svg></button></div>
 </section>
 <div id="lineup">
 <nav class="section-nav" aria-label="أقسام ساوند"><a href="#ps5"><span data-ar="البلي" data-en="PlayStation">البلي</span></a><a href="#pc"><span data-ar="الحاسبات" data-en="Gaming PCs">الحاسبات</span></a><a href="#cinema"><span data-ar="السينما" data-en="Cinema">السينما</span></a><a href="#billiards"><span data-ar="البلياردو والسنوكر" data-en="Billiards & snooker">البلياردو والسنوكر</span></a><a href="#vr"><span data-ar="الواقع الافتراضي" data-en="Virtual reality">الواقع الافتراضي</span></a><a href="#cafe"><span data-ar="الكافيه والمطعم" data-en="Café & restaurant">الكافيه والمطعم</span></a></nav>
@@ -198,19 +186,6 @@ footer p{color:var(--muted);font-size:12px;margin:0;text-align:end}
 <footer class="wrap"><a href="#top" class="wordmark" aria-label="SOUND home"><svg xmlns="http://www.w3.org/2000/svg" viewBox="622 423 676 297" aria-hidden="true" focusable="false"><path fill="#02ccff" fill-rule="nonzero" d="M1295.938,572.118 C1295.938,542.063 1280.205,515.679 1256.525,500.759 C1252.997,498.536 1248.400,501.083 1248.400,505.253 L1248.400,507.776 C1248.400,513.025 1241.566,515.099 1238.684,510.712 C1229.267,496.374 1216.648,484.327 1201.843,475.591 C1198.306,473.504 1193.839,476.053 1193.839,480.177 L1193.839,491.561 C1193.839,496.907 1186.835,498.886 1184.024,494.339 C1170.831,472.999 1152.371,455.259 1130.459,442.934 C1126.911,440.938 1122.526,443.469 1122.526,447.540 L1122.526,447.571 L1122.526,470.423 C1122.526,475.500 1116.072,477.683 1113.004,473.637 C1101.365,458.287 1085.876,446.404 1069.448,436.580 C1052.423,426.399 1034.795,425.785 1018.317,437.970 C983.411,463.781 972.954,482.501 955.604,482.547 C938.986,482.590 930.623,462.800 894.187,437.565 C894.187,437.565 879.819,427.653 866.610,428.220 C860.221,428.495 853.815,430.377 848.014,434.038 C832.069,444.102 817.988,456.852 806.407,471.651 C803.305,475.614 796.943,473.407 796.943,468.374 L796.943,447.571 L796.943,447.541 C796.943,443.472 792.560,440.938 789.014,442.932 C767.381,455.099 749.117,472.544 735.962,493.521 C733.131,498.033 726.166,496.038 726.166,490.711 L726.166,480.160 C726.166,476.054 721.699,473.504 718.163,475.591 C703.355,484.328 690.734,496.375 681.315,510.714 C678.434,515.101 671.600,513.026 671.600,507.777 L671.600,505.253 C671.600,501.083 667.003,498.536 663.474,500.759 C639.795,515.679 624.062,542.063 624.062,572.118 C624.062,572.192 624.065,572.265 624.065,572.339 C624.065,572.414 624.062,572.487 624.062,572.561 C624.062,602.616 639.795,629.000 663.474,643.919 C667.003,646.143 671.600,643.596 671.600,639.426 L671.600,636.902 C671.600,631.653 678.434,629.578 681.315,633.965 C690.734,648.304 703.356,660.351 718.163,669.088 C721.699,671.175 726.166,668.625 726.166,664.502 L726.166,653.968 C726.166,648.641 733.132,646.645 735.962,651.158 C749.117,672.135 767.381,689.580 789.014,701.747 C792.560,703.741 796.943,701.207 796.943,697.138 L796.943,697.108 L796.943,676.305 C796.943,671.272 803.305,669.065 806.407,673.028 C814.286,683.096 823.271,692.337 833.278,700.303 C842.992,708.034 853.763,715.907 866.612,716.459 C888.598,717.401 908.870,696.948 923.791,683.138 C932.446,675.128 942.612,662.098 955.604,662.132 C972.951,662.178 983.402,680.890 1018.316,706.708 C1022.855,710.065 1031.833,716.367 1043.892,716.546 C1063.374,716.835 1082.802,702.466 1096.457,689.856 C1103.254,683.580 1108.249,677.313 1113.004,671.041 C1116.072,666.995 1122.526,669.178 1122.526,674.256 L1122.526,697.107 L1122.526,697.139 C1122.526,701.209 1126.911,703.740 1130.459,701.745 C1152.371,689.420 1170.831,671.680 1184.024,650.340 C1186.836,645.792 1193.839,647.772 1193.839,653.118 L1193.839,664.519 C1193.839,668.625 1198.306,671.175 1201.843,669.088 C1216.648,660.351 1229.267,648.304 1238.684,633.967 C1241.566,629.579 1248.400,631.654 1248.400,636.903 L1248.400,639.426 C1248.400,643.596 1252.997,646.142 1256.525,643.919 C1280.205,629.000 1295.938,602.616 1295.938,572.561 C1295.938,572.487 1295.935,572.413 1295.934,572.339 C1295.935,572.265 1295.938,572.192 1295.938,572.118"/><path fill="#ffffff" fill-rule="nonzero" d="M782.460,560.141 C767.132,558.064 773.263,548.274 782.460,547.680 C793.042,546.889 797.690,552.427 797.690,557.965 L828.050,558.559 C828.841,536.407 811.139,522.858 786.613,522.858 C766.835,522.858 745.573,531.363 742.112,550.054 C738.354,571.118 755.462,579.425 777.713,582.491 C796.107,584.864 788.690,599.896 774.549,597.226 C766.340,595.644 763.967,589.710 763.967,584.666 L732.123,584.666 C729.750,603.852 744.782,622.641 773.461,622.641 C799.371,622.641 818.556,610.675 821.127,592.281 C823.105,576.656 814.304,564.393 782.460,560.141"/><path fill="#ffffff" fill-rule="nonzero" d="M889.858,579.919 C888.276,589.413 881.848,597.225 871.958,597.225 C862.069,597.225 858.410,589.413 860.091,579.919 C861.871,570.326 868.398,562.514 878.189,562.514 C888.177,562.514 891.638,570.326 889.858,579.919 M882.738,537.098 C854.553,537.098 831.313,556.185 827.061,579.919 C822.809,603.554 839.126,622.839 867.409,622.839 C895.594,622.839 918.834,603.554 923.086,579.919 C927.339,556.185 910.922,537.098 882.738,537.098"/><path fill="#ffffff" fill-rule="nonzero" d="M1061.069,537.099 C1039.043,536.903 1024.393,561.559 1022.833,564.268 C1024.074,557.981 1025.315,551.693 1026.555,545.406 L1025.361,545.406 L993.624,545.406 L992.429,545.406 L986.100,583.777 C982.738,592.479 973.738,599.105 967.014,599.105 C960.289,599.105 958.311,594.655 959.893,585.754 L966.519,545.406 L933.588,545.406 L926.962,585.754 C923.867,602.260 926.060,612.472 931.986,617.900 C937.449,622.904 944.574,622.813 947.235,622.839 C969.129,623.059 983.628,598.379 985.091,595.807 C983.746,602.016 982.401,608.225 981.056,614.433 L982.251,614.433 L1013.988,614.433 L1015.183,614.433 L1020.918,579.920 C1022.896,569.338 1033.379,560.635 1041.093,560.635 C1047.817,560.635 1049.795,565.086 1048.411,574.085 L1041.785,614.433 L1074.716,614.433 L1081.342,574.085 C1084.416,557.570 1082.274,547.447 1076.437,542.060 C1070.978,537.020 1063.803,537.123 1061.069,537.099"/><path fill="#ffffff" fill-rule="nonzero" d="M1135.334,594.395 C1133.402,596.202 1129.632,599.105 1125.185,599.105 C1117.471,599.105 1112.725,590.501 1114.801,579.920 C1116.680,569.338 1124.592,560.635 1132.503,560.635 C1136.974,560.635 1139.871,564.231 1140.501,564.974 C1147.005,572.640 1143.159,587.077 1135.334,594.395 M1153.271,516.035 C1152.148,531.655 1151.026,547.277 1149.904,562.898 C1149.226,559.896 1145.290,543.702 1131.993,538.592 C1131.297,538.325 1128.041,537.099 1123.998,537.099 C1106.593,537.099 1088.990,556.185 1084.540,579.920 C1080.090,603.555 1090.573,622.839 1107.978,622.839 C1119.548,622.839 1131.415,614.137 1139.228,601.182 L1137.052,614.433 L1169.984,614.433 L1186.103,516.035 L1153.271,516.035"/></svg></a><p data-en="SOUND · Gaming, café & good company." data-ar="ساوند · لعب وقهوة ولَمّة حلوة.">ساوند · لعب وقهوة ولَمّة حلوة.</p></footer>
 <script>
 (function(){
-  var wave=document.querySelector('.signal');
-  var motionButton=document.querySelector('.motion-toggle');
-  var reducedMotion=window.matchMedia('(prefers-reduced-motion: reduce)');
-  var paused=false,heroVisible=true;
-  function updateMotion(){
-    wave.dataset.active=String(!paused&&!reducedMotion.matches&&heroVisible&&!document.hidden);
-    motionButton.setAttribute('aria-pressed',String(paused));
-    motionButton.setAttribute('aria-label',lang==='en'?(paused?'Play wave animation':'Pause wave animation'):(paused?'تشغيل حركة الموجة':'إيقاف حركة الموجة'));
-  }
-  motionButton.addEventListener('click',function(){paused=!paused;updateMotion()});
-  reducedMotion.addEventListener('change',updateMotion);
-  document.addEventListener('visibilitychange',updateMotion);
-  if('IntersectionObserver' in window){new IntersectionObserver(function(entries){heroVisible=entries[0].isIntersecting;updateMotion()}).observe(document.querySelector('.hero'))}
   var button=document.getElementById('language');
   var lang='ar';
   function setLanguage(next){
@@ -225,7 +200,6 @@ footer p{color:var(--muted);font-size:12px;margin:0;text-align:end}
     document.querySelectorAll('.wordmark').forEach(function(el){el.setAttribute('aria-label',lang==='en'?'SOUND home':'ساوند — الرئيسية')});
     document.querySelector('meta[name="description"]').content=lang==='en'?'Explore SOUND: PlayStation 5, gaming PCs, VIP PC room, cinema, billiards and café.':'شوف الأقسام والأسعار بساوند: بلايستيشن 5، بي سي، غرفة VIP، سينما، بليارد وكافيه.';
     document.querySelector('.closing a').setAttribute('aria-label',lang==='en'?'Back to top':'العودة للأعلى');
-    updateMotion();
     try{localStorage.setItem('sound-menu-language-v2',lang)}catch(e){}
   }
   button.addEventListener('click',function(){setLanguage(lang==='en'?'ar':'en')});
