@@ -61,12 +61,13 @@ h1 em{font-style:normal;color:var(--blue)}
 .card h3{font-size:24px;line-height:1.5;margin:0 0 12px}
 .card p{margin:0;color:var(--muted);line-height:1.85}
 .card-photo{position:relative;isolation:isolate;width:100%;height:100%;min-height:210px;margin:0;overflow:hidden;background:#e9edf3}
-.card-photo.carousel .carousel-image{opacity:0;transition:opacity 500ms var(--ease)}
+.card-photo.carousel .carousel-image{opacity:0;transition:opacity 780ms cubic-bezier(.22,.61,.36,1);will-change:opacity}
 .card-photo.carousel .carousel-image.is-active{opacity:1}
-.carousel-progress{position:absolute;z-index:3;left:16px;right:16px;bottom:14px;display:flex;gap:6px;height:3px}
-.carousel-progress span{position:relative;display:block;flex:1;overflow:hidden;border-radius:99px;background:rgba(255,255,255,.45)}
-.carousel-progress span::after{content:"";position:absolute;inset:0;background:#fff;transform:translateX(-100%)}
-.carousel-progress span.is-active::after{transform:translateX(0);transition:transform 6s linear}
+.carousel-progress{position:absolute;z-index:3;left:16px;right:16px;bottom:14px;height:3px;overflow:hidden;border-radius:99px;background:rgba(255,255,255,.42)}
+.carousel-progress-fill{display:block;width:0;height:100%;border-radius:inherit;background:#fff;transform-origin:left center}
+.carousel-progress-fill.is-running{animation:carousel-progress 6s linear forwards}
+.carousel-progress-fill.is-paused{animation-play-state:paused}
+@keyframes carousel-progress{from{width:0}to{width:100%}}
 .card-photo img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center;z-index:1}
 .card-photo img[hidden]{display:none}
 .photo-fallback{position:absolute;inset:0;display:grid;place-items:center;color:var(--muted);font:800 28px/1 var(--font);direction:ltr}
@@ -116,7 +117,7 @@ footer p{color:var(--muted);font-size:12px;margin:0;text-align:end}
  .price-row{gap:12px}
  footer{gap:16px}footer p{max-width:200px}
 }
-@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.browse,.language,.section-nav a,.card-photo.carousel .carousel-image{transition:none}.carousel-progress span.is-active::after{transition:none}.carousel-progress span.is-active::after{transform:translateX(0)}.browse:active,.language:active{transform:none}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.browse,.language,.section-nav a,.card-photo.carousel .carousel-image{transition:none}.carousel-progress-fill.is-running{animation:none;width:100%}.browse:active,.language:active{transform:none}}
 
 
 .location{margin-top:28px}
@@ -169,7 +170,7 @@ footer p{color:var(--muted);font-size:12px;margin:0;text-align:end}
 </div></article>
 <article class="card menu-card" id="pc">
 
-<figure class="card-photo carousel" data-carousel data-interval="6000"><span class="photo-fallback" aria-hidden="true">SOUND</span><img class="carousel-image is-active" src="/sound-gaming-pcs.webp" width="1200" height="675" loading="lazy" decoding="async" alt="صالة الحاسبات في ساوند — صورة معدّلة" data-alt-ar="صالة الحاسبات في ساوند — صورة معدّلة" data-alt-en="SOUND gaming PC room — edited photo" onerror="this.hidden=true"><img class="carousel-image" src="/sound-gaming-pcs-neon.webp" width="1200" height="675" loading="lazy" decoding="async" alt="صالة حاسبات بإضاءة نيون — صورة معدّلة" data-alt-ar="صالة حاسبات بإضاءة نيون — صورة معدّلة" data-alt-en="Gaming PC room with neon lighting — edited photo" aria-hidden="true" onerror="this.hidden=true"><span class="carousel-progress" aria-hidden="true"><span class="is-active"></span><span></span></span></figure>
+<figure class="card-photo carousel" data-carousel data-interval="6000"><span class="photo-fallback" aria-hidden="true">SOUND</span><img class="carousel-image is-active" src="/sound-gaming-pcs.webp" width="1200" height="675" loading="lazy" decoding="async" alt="صالة الحاسبات في ساوند — صورة معدّلة" data-alt-ar="صالة الحاسبات في ساوند — صورة معدّلة" data-alt-en="SOUND gaming PC room — edited photo" onerror="this.hidden=true"><img class="carousel-image" src="/sound-gaming-pcs-neon.webp" width="1200" height="675" loading="lazy" decoding="async" alt="صالة حاسبات بإضاءة نيون — صورة معدّلة" data-alt-ar="صالة حاسبات بإضاءة نيون — صورة معدّلة" data-alt-en="Gaming PC room with neon lighting — edited photo" aria-hidden="true" onerror="this.hidden=true"><span class="carousel-progress" aria-hidden="true"><span class="carousel-progress-fill"></span></span></figure>
 <div class="card-body">
 <h3 data-ar="الحاسبات" data-en="Gaming PCs">الحاسبات</h3>
 <dl class="price-list"><div class="price-row"><dt><span data-ar="أيليت" data-en="Elite">أيليت</span></dt><dd data-price="2500"><b data-ar="٢٬٥٠٠" data-en="2,500">٢٬٥٠٠</b> <span data-ar="د.ع" data-en="IQD">د.ع</span><small><span data-ar="للساعة" data-en="/ hour">للساعة</span></small></dd></div><div class="price-row"><dt><span data-ar="الماستر" data-en="Master">الماستر</span></dt><dd data-price="3500"><b data-ar="٣٬٥٠٠" data-en="3,500">٣٬٥٠٠</b> <span data-ar="د.ع" data-en="IQD">د.ع</span><small><span data-ar="للساعة" data-en="/ hour">للساعة</span></small></dd></div></dl>
@@ -282,16 +283,24 @@ footer p{color:var(--muted);font-size:12px;margin:0;text-align:end}
 
   document.querySelectorAll('[data-carousel]').forEach(function(carousel){
     var images=Array.from(carousel.querySelectorAll('.carousel-image'));
-    var progress=Array.from(carousel.querySelectorAll('.carousel-progress span'));
-    if(images.length<2)return;
-    var current=0,interval=Number(carousel.getAttribute('data-interval'))||6000,timer;
+    var fill=carousel.querySelector('.carousel-progress-fill');
+    if(images.length<2||!fill)return;
+    var current=0,interval=Number(carousel.getAttribute('data-interval'))||6000,timer,paused=false;
+    fill.style.animationDuration=interval+'ms';
+    function resetProgress(){
+      fill.classList.remove('is-running');
+      void fill.offsetWidth;
+      fill.style.animationDuration=interval+'ms';
+      fill.classList.add('is-running');
+      if(paused)fill.classList.add('is-paused');else fill.classList.remove('is-paused');
+    }
     function show(next){
       current=(next+images.length)%images.length;
       images.forEach(function(image,index){var active=index===current;image.classList.toggle('is-active',active);image.setAttribute('aria-hidden',active?'false':'true')});
-      progress.forEach(function(item,index){item.classList.toggle('is-active',index===current)});
+      resetProgress();
     }
-    function start(){timer=window.setInterval(function(){show(current+1)},interval)}
-    function stop(){window.clearInterval(timer)}
+    function start(){paused=false;fill.classList.remove('is-paused');if(!timer)timer=window.setInterval(function(){show(current+1)},interval);if(!fill.classList.contains('is-running'))resetProgress()}
+    function stop(){paused=true;window.clearInterval(timer);timer=null;fill.classList.add('is-paused')}
     carousel.addEventListener('mouseenter',stop);carousel.addEventListener('mouseleave',start);carousel.addEventListener('focusin',stop);carousel.addEventListener('focusout',start);
     start();
   });
