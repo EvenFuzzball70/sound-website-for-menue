@@ -14,10 +14,11 @@
 :root{
  --bg:#f5f9ff;--surface:#fff;--ink:#101d40;--muted:#506078;
  --line:#d5e1ef;--cyan:#02ccff;--blue:#000bfa;--radius:16px;
+ --header-height:80px;--category-height:70px;--ease:cubic-bezier(.2,0,0,1);
  --font:"Noto Sans Arabic",Tahoma,Arial,sans-serif
 }
 *{box-sizing:border-box}
-html{scroll-behavior:smooth;scroll-padding-top:108px;scrollbar-color:#7996b5 var(--bg)}
+html{scroll-behavior:smooth;scroll-padding-top:calc(var(--header-height) + var(--category-height) + 16px);scrollbar-color:#7996b5 var(--bg)}
 body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.8 var(--font)}
 a{color:inherit;text-decoration:none;text-underline-offset:4px}
 button{font:inherit;cursor:pointer}
@@ -46,12 +47,24 @@ h1 em{font-style:normal;color:var(--blue)}
 .browse{display:inline-flex;align-items:center;justify-content:space-between;gap:22px;background:var(--blue);color:#fff;border-radius:12px;padding:13px 20px;min-height:48px;flex-shrink:0;font-size:14px}
 .browse:hover{background:#0014bd}
 .browse:focus-visible{outline-color:var(--ink)}
-.signal{height:48px;display:flex;align-items:center;gap:5px;margin-top:26px;overflow:hidden;mask-image:linear-gradient(90deg,transparent,#000 10%,#000 90%,transparent)}
-.signal i{flex:1;min-width:3px;height:var(--h);max-height:46px;background:#009ecb;opacity:var(--o);border-radius:2px}
-.section-nav{display:flex;gap:8px;overflow-x:auto;padding:24px 4px 12px;scrollbar-width:thin;scrollbar-color:#7996b5 transparent}
+.browse,.language,.section-nav a{transition:background-color 160ms var(--ease),border-color 160ms var(--ease),color 160ms var(--ease),transform 160ms var(--ease)}
+.browse:active,.language:active{transform:scale(.98)}
+.signal-row{display:flex;align-items:center;gap:12px;margin-top:20px;direction:ltr}
+.signal{height:48px;display:flex;align-items:center;gap:5px;flex:1;min-width:0;overflow:hidden;mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent)}
+.signal i{flex:1;min-width:1px;height:var(--h);max-height:46px;background:#009ecb;opacity:var(--o);border-radius:2px;transform-origin:center}
+.signal i:nth-child(3n){animation:sound-pulse 2.4s cubic-bezier(.4,0,.6,1) infinite;animation-delay:var(--delay);animation-play-state:paused}
+.signal[data-active="true"] i{animation-play-state:running}
+@keyframes sound-pulse{0%,100%{transform:scaleY(.48)}50%{transform:scaleY(1)}}
+.motion-toggle{display:grid;place-items:center;flex-shrink:0;width:44px;height:44px;padding:0;background:transparent;border:1px solid var(--line);border-radius:50%;color:var(--ink)}
+.motion-toggle:hover{background:var(--surface);border-color:var(--ink)}
+.motion-toggle .play-icon{display:none}
+.motion-toggle[aria-pressed="true"] .pause-icon{display:none}
+.motion-toggle[aria-pressed="true"] .play-icon{display:block}
+.section-nav{position:sticky;top:var(--header-height);z-index:15;display:flex;gap:8px;overflow-x:auto;padding:12px 4px;background:var(--bg);border-bottom:1px solid var(--line);scrollbar-width:none;overscroll-behavior-x:contain}
+.section-nav::-webkit-scrollbar{display:none}
 .section-nav a{white-space:nowrap;border:1px solid var(--line);border-radius:30px;padding:9px 18px;background:var(--surface);font-size:14px;min-height:46px}
 .section-nav a:hover{border-color:var(--blue);color:var(--blue)}
-.section-nav a[aria-current="location"]{background:var(--ink);color:white;border-color:var(--ink)}
+.section-nav a[aria-current="location"]{background:var(--blue);color:white;border-color:var(--blue)}
 .section{padding:28px 0 12px}
 .section-heading{display:flex;align-items:center;justify-content:space-between;gap:16px;margin-bottom:8px}
 .section-heading h2{font-size:30px;line-height:1.6;margin:0}
@@ -75,7 +88,8 @@ h1 em{font-style:normal;color:var(--blue)}
 .price-row small{display:block;color:var(--muted);font-size:12px;line-height:1.7}
 .menu-blue .price-row{border-color:#7580ff}
 .menu-blue .price-row small{color:#e5edff}
-.card .vip-note{font-size:13px;border-top:1px solid var(--line);padding-top:14px;margin-top:18px}
+.card .vip-note{font-size:14px;border-top:1px solid var(--line);padding-top:14px;margin-top:18px}
+.cafe-menu-link{margin-top:20px;font-weight:700;justify-content:center}
 .photo-note{font-size:13px;line-height:1.9;color:var(--muted);margin-top:24px;max-width:76ch}
 .photo-note>p{margin:0}
 .photo-credits{font-size:12px;margin-top:4px}
@@ -93,25 +107,27 @@ footer p{color:var(--muted);font-size:12px;margin:0;text-align:end}
 @media(max-width:900px){.hero-bottom{align-items:start;flex-direction:column;gap:20px}.section-heading{flex-wrap:wrap;gap:6px}.navlinks{gap:16px}}
 @media(max-width:760px){
  .wrap{width:calc(100% - 32px)}
- .nav{min-height:72px;gap:14px}.wordmark{font-size:30px}.navlinks{font-size:12px;gap:12px}
+ :root{--header-height:64px}
+ .nav{min-height:64px;gap:14px}.wordmark{font-size:30px}.navlinks{display:none}
  .language{padding:8px 14px;font-size:14px}
- .hero{margin-top:16px;padding:22px 20px 16px}
- h1{font-size:clamp(34px,8.6vw,60px);margin-bottom:16px;line-height:1.5}
+ .hero{margin-top:16px;padding:20px 20px 12px}
+ h1{font-size:clamp(34px,9.5vw,52px);margin-bottom:12px;line-height:1.45}
  [dir="ltr"] h1{font-size:clamp(36px,9vw,64px)}
- .hero-bottom p{font-size:15px}
- .signal{height:36px;margin-top:20px}.signal i{max-height:34px}
- .section-nav{padding-top:20px}.section-nav a{font-size:13px;padding-inline:15px}
+ .hero-bottom{gap:16px}.hero-bottom p{font-size:16px;line-height:1.85}
+ .hero-bottom .browse,.cafe-menu-link{width:100%;min-height:50px;font-size:15px}
+ .signal-row{margin-top:12px;gap:8px}.signal{height:40px;gap:3px}.signal i{max-height:36px}.signal i:nth-child(n+33){display:none}
+ .section-nav a{font-size:14px;padding:9px 16px;min-height:46px}
  .section{padding-top:20px}.section-heading h2{font-size:24px}
- .menu-intro{font-size:13px;margin-bottom:20px}
+ .menu-intro{font-size:14px;margin-bottom:20px}
  .menu-grid{grid-template-columns:1fr;gap:20px}
  .card{padding:18px}.card h3{font-size:24px;margin-bottom:12px}
  .card-photo{aspect-ratio:16/10;margin-bottom:16px}
- .price-row dd b{font-size:26px}.price-row dt{font-size:14px}
+ .price-row dd b{font-size:28px}.price-row dt{font-size:15px}
  .closing{padding:20px;margin-top:28px}
  footer{gap:16px}footer p{max-width:200px}
 }
-@media(max-width:390px){.navlinks{display:none}.price-row{gap:10px}.price-row dd b{font-size:24px}}
-@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+@media(max-width:390px){.price-row{gap:10px}.price-row dd b{font-size:26px}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.signal i:nth-child(3n){animation:none}.browse,.language,.section-nav a{transition:none}.browse:active,.language:active{transform:none}.motion-toggle{display:none}}
 
 </style>
 </head>
@@ -127,7 +143,7 @@ footer p{color:var(--muted);font-size:12px;margin:0;text-align:end}
 
 <h1 id="hero-title"><span data-en="SOUND LEADS" data-ar="اللعب إلك.">اللعب إلك.</span><br><em data-en="THE GAME." data-ar="والجو علينا.">والجو علينا.</em></h1>
 <div class="hero-bottom"><p data-en="Your game. Your space. Find your next session at SOUND." data-ar="بلي، حاسبات، سينما، بليارد وسنوكر وVR. شوف الأسعار واختار قعدتك بساوند.">بلي، حاسبات، سينما، بليارد وسنوكر وVR. شوف الأسعار واختار قعدتك بساوند.</p><a class="browse" href="#lineup"><b data-en="Explore the lineup" data-ar="شوف الأقسام والأسعار">شوف الأقسام والأسعار</b><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M12 4v16m-6-6 6 6 6-6"/></svg></a></div>
-<div class="signal" aria-hidden="true"></div>
+<div class="signal-row"><div class="signal" aria-hidden="true"></div><button class="motion-toggle" type="button" aria-label="إيقاف حركة الموجة" aria-pressed="false"><svg class="pause-icon" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M8 5v14M16 5v14"/></svg><svg class="play-icon" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" aria-hidden="true"><path d="m8 5 11 7-11 7Z"/></svg></button></div>
 </section>
 <div id="lineup">
 <nav class="section-nav" aria-label="أقسام ساوند"><a href="#ps5"><span data-ar="البلي" data-en="PlayStation">البلي</span></a><a href="#pc"><span data-ar="الحاسبات" data-en="Gaming PCs">الحاسبات</span></a><a href="#cinema"><span data-ar="السينما" data-en="Cinema">السينما</span></a><a href="#billiards"><span data-ar="البلياردو والسنوكر" data-en="Billiards & snooker">البلياردو والسنوكر</span></a><a href="#vr"><span data-ar="الواقع الافتراضي" data-en="Virtual reality">الواقع الافتراضي</span></a><a href="#cafe"><span data-ar="الكافيه والمطعم" data-en="Café & restaurant">الكافيه والمطعم</span></a></nav>
@@ -174,7 +190,7 @@ footer p{color:var(--muted);font-size:12px;margin:0;text-align:end}
 <figure class="card-photo"><span class="photo-fallback" aria-hidden="true">SOUND</span><img src="https://images.unsplash.com/photo-1413745094207-a01b234cc32f?auto=format&amp;w=960" srcset="https://images.unsplash.com/photo-1413745094207-a01b234cc32f?auto=format&amp;w=480 480w, https://images.unsplash.com/photo-1413745094207-a01b234cc32f?auto=format&amp;w=960 960w" sizes="(max-width:760px) 90vw, (max-width:1360px) 44vw, 590px" width="960" height="640" loading="lazy" decoding="async" alt="صورة توضيحية للقهوة" data-alt-ar="صورة توضيحية للقهوة" data-alt-en="Illustrative coffee photo" onerror="this.hidden=true"></figure>
 <h3 data-ar="الكافيه والمطعم" data-en="Café & restaurant">الكافيه والمطعم</h3>
 <p data-ar="خذلك استراحة للأكل والشرب، وبعدين كمّل اللعب." data-en="Take a break for food and drinks, then get back to your game.">خذلك استراحة للأكل والشرب، وبعدين كمّل اللعب.</p>
-<a class="browse" style="margin-top:20px" href="https://menu.iqrarabic.com/Sound#" data-ar="شوف المنيو" data-en="View the menu">شوف المنيو</a>
+<a class="browse cafe-menu-link" href="https://menu.iqrarabic.com/Sound#" data-ar="شوف المنيو" data-en="View the menu">شوف المنيو</a>
 
 </article></div>
 </section></div>
@@ -185,7 +201,19 @@ footer p{color:var(--muted);font-size:12px;margin:0;text-align:end}
 <script>
 (function(){
   var wave=document.querySelector('.signal');
-  for(var i=0;i<96;i++){var bar=document.createElement('i');var height=12+Math.abs(Math.sin(i*.37)*Math.cos(i*.12))*66;bar.style.setProperty('--h',height+'px');bar.style.setProperty('--o',String(.2+Math.abs(Math.sin(i*.13))*.65));wave.appendChild(bar)}
+  for(var i=0;i<64;i++){var bar=document.createElement('i');var height=12+Math.abs(Math.sin(i*.37)*Math.cos(i*.12))*40;bar.style.setProperty('--h',height+'px');bar.style.setProperty('--o',String(.35+Math.abs(Math.sin(i*.13))*.6));bar.style.setProperty('--delay',(-i*.06)+'s');wave.appendChild(bar)}
+  var motionButton=document.querySelector('.motion-toggle');
+  var reducedMotion=window.matchMedia('(prefers-reduced-motion: reduce)');
+  var paused=false,heroVisible=true;
+  function updateMotion(){
+    wave.dataset.active=String(!paused&&!reducedMotion.matches&&heroVisible&&!document.hidden);
+    motionButton.setAttribute('aria-pressed',String(paused));
+    motionButton.setAttribute('aria-label',lang==='en'?(paused?'Play wave animation':'Pause wave animation'):(paused?'تشغيل حركة الموجة':'إيقاف حركة الموجة'));
+  }
+  motionButton.addEventListener('click',function(){paused=!paused;updateMotion()});
+  reducedMotion.addEventListener('change',updateMotion);
+  document.addEventListener('visibilitychange',updateMotion);
+  if('IntersectionObserver' in window){new IntersectionObserver(function(entries){heroVisible=entries[0].isIntersecting;updateMotion()}).observe(document.querySelector('.hero'))}
   var button=document.getElementById('language');
   var lang='ar';
   function setLanguage(next){
@@ -200,6 +228,7 @@ footer p{color:var(--muted);font-size:12px;margin:0;text-align:end}
     document.querySelectorAll('.wordmark').forEach(function(el){el.setAttribute('aria-label',lang==='en'?'SOUND home':'ساوند — الرئيسية')});
     document.querySelector('meta[name="description"]').content=lang==='en'?'Explore SOUND: PlayStation 5, gaming PCs, VIP PC room, cinema, billiards and café.':'شوف الأقسام والأسعار بساوند: بلايستيشن 5، بي سي، غرفة VIP، سينما، بليارد وكافيه.';
     document.querySelector('.closing a').setAttribute('aria-label',lang==='en'?'Back to top':'العودة للأعلى');
+    updateMotion();
     try{localStorage.setItem('sound-menu-language-v2',lang)}catch(e){}
   }
   button.addEventListener('click',function(){setLanguage(lang==='en'?'ar':'en')});
@@ -208,6 +237,14 @@ footer p{color:var(--muted);font-size:12px;margin:0;text-align:end}
   setLanguage(initial);
 
   var categoryLinks=Array.from(document.querySelectorAll('.section-nav a'));
+  var categoryNav=document.querySelector('.section-nav');
+  var header=document.querySelector('header');
+  function measureNavigation(){
+    document.documentElement.style.setProperty('--header-height',header.getBoundingClientRect().height+'px');
+    document.documentElement.style.setProperty('--category-height',categoryNav.getBoundingClientRect().height+'px');
+  }
+  if('ResizeObserver' in window){var navigationSize=new ResizeObserver(measureNavigation);navigationSize.observe(header);navigationSize.observe(categoryNav)}
+  measureNavigation();
   function syncCategory(){
     var selected=window.location.hash;
     if(selected==='#vip')selected='#pc';
