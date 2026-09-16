@@ -1,0 +1,432 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#ffffff">
+<meta name="robots" content="noindex,nofollow">
+<title>إدارة منيو ساوند</title>
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Arabic:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+:root{--blue:#02ccff;--ink:#17213b;--muted:#5b667b;--line:#dce1eb;--soft:#f5f8fc;--surface:#fff;--danger:#ba3345;--success:#147a55;--radius:14px;--shadow:0 18px 45px rgba(0,0,0,.1);--font:"Noto Sans Arabic",Tahoma,Arial,sans-serif}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--soft);color:var(--ink);font:15px/1.7 var(--font);accent-color:var(--blue)}
+button,input,select,textarea{font:inherit}
+button{cursor:pointer}
+a{color:inherit}
+::selection{background:#bdefff;color:var(--ink)}
+:focus-visible{outline:3px solid var(--blue);outline-offset:3px}
+.hidden{display:none!important}
+.shell{width:min(1040px,calc(100% - 32px));margin-inline:auto}
+.login{min-height:100svh;display:grid;place-items:center;padding:24px}
+.login-panel{width:min(440px,100%);background:var(--surface);border-radius:18px;box-shadow:var(--shadow);padding:30px}
+.brand{display:flex;align-items:center;gap:13px;margin-bottom:26px}
+.brand img{width:88px;height:50px;object-fit:contain}
+.brand div{min-width:0}
+.brand strong{display:block;font-size:18px}
+.brand span{color:var(--muted);font-size:13px}
+h1,h2,h3,p{margin-top:0}
+.login h1{font-size:28px;line-height:1.4;margin-bottom:8px}
+.login-copy{color:var(--muted);margin-bottom:24px}
+label{display:block;font-weight:700;margin-bottom:7px}
+.field{margin-bottom:17px}
+input,select,textarea{width:100%;border:1px solid #cdd5e2;background:#fff;color:var(--ink);border-radius:12px;padding:12px 13px;min-height:48px;transition:border-color .18s ease,box-shadow .18s ease}
+textarea{min-height:108px;resize:vertical}
+input:hover,select:hover,textarea:hover{border-color:#9da9bc}
+input:focus,select:focus,textarea:focus{border-color:var(--blue);box-shadow:0 0 0 3px rgba(2,204,255,.17);outline:none}
+.password-wrap{position:relative}
+.password-wrap input{padding-inline-end:54px}
+.icon-button{display:grid;place-items:center;border:0;background:transparent;color:var(--muted);width:44px;height:44px;border-radius:10px}
+.password-wrap .icon-button{position:absolute;inset-inline-end:2px;top:2px}
+.primary,.secondary,.danger-button{border:0;border-radius:12px;min-height:48px;padding:10px 18px;font-weight:800;display:inline-flex;align-items:center;justify-content:center;gap:8px}
+.primary{background:var(--blue);color:#062a34}
+.primary:hover{background:#00bce9}
+.primary:active{transform:translateY(1px)}
+.primary:disabled{opacity:.5;cursor:not-allowed}
+.secondary{background:#eef3f8;color:var(--ink)}
+.secondary:hover{background:#e3eaf2}
+.danger-button{background:#fff0f2;color:var(--danger)}
+.wide{width:100%}
+.login-error{min-height:24px;margin:8px 0 0;color:var(--danger);font-weight:700}
+.admin-header{position:sticky;top:0;z-index:20;background:rgba(255,255,255,.96);border-bottom:1px solid var(--line);backdrop-filter:blur(12px)}
+.admin-bar{min-height:72px;display:flex;align-items:center;justify-content:space-between;gap:14px}
+.admin-title{display:flex;align-items:center;gap:12px}
+.admin-title img{width:72px;height:42px;object-fit:contain}
+.admin-title strong{display:block;font-size:17px;line-height:1.35}
+.device-note{color:var(--muted);font-size:12px}
+.header-actions{display:flex;align-items:center;gap:8px}
+.header-actions a,.header-actions button{min-width:44px;height:44px}
+.header-actions a{display:grid;place-items:center;border-radius:10px;background:#eef3f8;text-decoration:none}
+.workspace{padding-block:26px 110px}
+.notice{display:flex;align-items:flex-start;gap:12px;padding:14px 16px;margin-bottom:20px;background:#eafaff;color:#075f78;border-radius:12px}
+.notice svg{flex:0 0 auto;margin-top:3px}
+.tabs{display:flex;gap:7px;overflow:auto;padding:4px;margin:0 0 24px;background:#e9eef5;border-radius:14px;scrollbar-width:none}
+.tabs::-webkit-scrollbar{display:none}
+.tab{border:0;background:transparent;color:var(--muted);padding:10px 16px;border-radius:10px;font-weight:800;white-space:nowrap;min-height:44px}
+.tab[aria-selected="true"]{background:#fff;color:var(--ink);box-shadow:0 4px 14px rgba(23,33,59,.08)}
+.panel{display:none}
+.panel.is-active{display:block}
+.section-head{display:flex;align-items:flex-end;justify-content:space-between;gap:18px;margin-bottom:18px}
+.section-head h1{font-size:25px;line-height:1.4;margin-bottom:4px}
+.section-head p{color:var(--muted);margin:0}
+.menu-groups{display:grid;gap:14px}
+.group{background:#fff;border-radius:var(--radius);overflow:hidden}
+.group summary{list-style:none;display:flex;align-items:center;justify-content:space-between;gap:16px;padding:17px 18px;font-size:17px;font-weight:800;cursor:pointer}
+.group summary::-webkit-details-marker{display:none}
+.group summary svg{transition:transform .18s ease}
+.group[open] summary svg{transform:rotate(180deg)}
+.group-items{border-top:1px solid var(--line)}
+.item-row{display:grid;grid-template-columns:minmax(150px,1fr) 170px 140px auto;align-items:end;gap:14px;padding:16px 18px;border-bottom:1px solid var(--line)}
+.item-row:last-child{border-bottom:0}
+.item-name{align-self:center}
+.item-name strong{display:block;font-size:16px}
+.item-name span{color:var(--muted);font-size:12px}
+.item-row .field{margin:0}
+.item-row label{font-size:12px;color:var(--muted)}
+.switch-wrap{display:flex;align-items:center;gap:9px;min-height:48px;white-space:nowrap}
+.switch{position:relative;width:46px;height:26px}
+.switch input{position:absolute;opacity:0;pointer-events:none}
+.switch-track{position:absolute;inset:0;border-radius:999px;background:#cbd4e0;transition:.18s ease}
+.switch-track:after{content:"";position:absolute;top:3px;right:3px;width:20px;height:20px;border-radius:50%;background:#fff;box-shadow:0 2px 7px rgba(23,33,59,.2);transition:.18s ease}
+.switch input:checked+.switch-track{background:var(--danger)}
+.switch input:checked+.switch-track:after{transform:translateX(-20px)}
+.offer-layout{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(300px,.95fr);gap:22px;align-items:start}
+.form-surface,.offer-list-surface,.backup-surface{background:#fff;border-radius:var(--radius);padding:20px}
+.form-surface h2,.offer-list-surface h2,.backup-surface h2{font-size:20px;margin-bottom:17px}
+.field-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.form-actions{display:flex;gap:10px;margin-top:20px}
+.offer-list{display:grid;gap:10px}
+.empty{padding:30px 18px;text-align:center;background:var(--soft);border-radius:12px;color:var(--muted)}
+.offer-entry{display:flex;align-items:flex-start;justify-content:space-between;gap:12px;padding:14px;background:var(--soft);border-radius:12px}
+.offer-entry h3{font-size:15px;margin-bottom:3px}
+.offer-entry p{color:var(--muted);font-size:12px;margin:0}
+.offer-entry-actions{display:flex;gap:4px}
+.offer-entry-actions button{width:40px;height:40px;border:0;border-radius:9px;background:#fff;color:var(--ink);display:grid;place-items:center}
+.offer-entry-actions button[data-delete]{color:var(--danger)}
+.backup-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.backup-box{padding:18px;background:var(--soft);border-radius:12px}
+.backup-box h3{font-size:17px;margin-bottom:7px}
+.backup-box p{color:var(--muted);margin-bottom:16px}
+.file-input{position:absolute;inline-size:1px;block-size:1px;opacity:0;overflow:hidden}
+.backup-box label.secondary{margin:0}
+.danger-zone{margin-top:20px;padding-top:20px;border-top:1px solid var(--line)}
+.danger-zone h3{color:var(--danger)}
+.save-bar{position:fixed;z-index:18;inset-inline:0;bottom:0;padding:12px max(16px,env(safe-area-inset-right)) calc(12px + env(safe-area-inset-bottom)) max(16px,env(safe-area-inset-left));background:rgba(255,255,255,.96);border-top:1px solid var(--line);backdrop-filter:blur(12px)}
+.save-inner{width:min(1040px,100%);margin:auto;display:flex;align-items:center;justify-content:space-between;gap:16px}
+.save-status{color:var(--muted);font-size:13px}
+.save-inner .primary{min-width:180px}
+.toast{position:fixed;z-index:40;left:50%;bottom:92px;transform:translate(-50%,18px);background:var(--ink);color:#fff;border-radius:12px;padding:11px 16px;box-shadow:var(--shadow);opacity:0;pointer-events:none;transition:.2s ease;white-space:nowrap}
+.toast.is-visible{opacity:1;transform:translate(-50%,0)}
+.toast.is-error{background:var(--danger)}
+@media(max-width:780px){
+ .shell{width:min(100% - 24px,1040px)}
+ .admin-title img{width:62px}
+ .device-note{display:none}
+ .workspace{padding-top:18px}
+ .section-head{display:block}
+ .item-row{grid-template-columns:1fr 1fr;padding:15px}
+ .item-name{grid-column:1/-1}
+ .switch-wrap{align-self:end}
+ .offer-layout,.backup-grid{grid-template-columns:1fr}
+ .offer-list-surface{order:-1}
+}
+@media(max-width:480px){
+ .login-panel{padding:24px 20px}
+ .admin-bar{min-height:64px}
+ .admin-title strong{font-size:15px}
+ .header-actions .logout-text{display:none}
+ .tabs{margin-inline:-4px}
+ .tab{padding-inline:13px}
+ .item-row,.field-grid{grid-template-columns:1fr}
+ .item-name{grid-column:auto}
+ .switch-wrap{justify-content:space-between}
+ .form-actions{flex-direction:column}
+ .save-inner .primary{min-width:148px}
+}
+@media(prefers-reduced-motion:reduce){*,*:before,*:after{scroll-behavior:auto!important;transition:none!important}}
+</style>
+</head>
+<body>
+<section class="login" id="login-view">
+  <div class="login-panel">
+    <div class="brand"><img src="/favicon.svg" alt=""><div><strong>SOUND</strong><span>لوحة إدارة المنيو</span></div></div>
+    <h1>دخول الإدارة</h1>
+    <p class="login-copy">اكتب كلمة المرور حتى تعدّل الأسعار والعروض على هذا الجهاز.</p>
+    <form id="login-form">
+      <div class="field">
+        <label for="password">كلمة المرور</label>
+        <div class="password-wrap">
+          <input id="password" type="password" autocomplete="current-password" required>
+          <button class="icon-button" id="toggle-password" type="button" aria-label="إظهار كلمة المرور">
+            <svg viewBox="0 0 24 24" width="21" height="21" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M2.5 12s3.5-6 9.5-6 9.5 6 9.5 6-3.5 6-9.5 6-9.5-6-9.5-6Z"/><circle cx="12" cy="12" r="2.8"/></svg>
+          </button>
+        </div>
+      </div>
+      <button class="primary wide" type="submit">دخول</button>
+      <p class="login-error" id="login-error" role="alert"></p>
+    </form>
+  </div>
+</section>
+
+<div id="admin-view" class="hidden">
+  <header class="admin-header">
+    <div class="shell admin-bar">
+      <div class="admin-title"><img src="/favicon.svg" alt=""><div><strong>إدارة منيو ساوند</strong><span class="device-note">التغييرات محفوظة على هذا الجهاز فقط</span></div></div>
+      <div class="header-actions">
+        <a href="/" target="_blank" aria-label="فتح المنيو"><svg viewBox="0 0 24 24" width="21" height="21" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M14 4h6v6M20 4l-9 9"/><path d="M18 13v6a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h6"/></svg></a>
+        <button class="secondary" id="logout" type="button"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M10 4H5a1 1 0 0 0-1 1v14a1 1 0 0 0 1 1h5M14 8l4 4-4 4M18 12H9"/></svg><span class="logout-text">خروج</span></button>
+      </div>
+    </div>
+  </header>
+
+  <main class="shell workspace">
+    <div class="notice"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.9" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 10v6M12 7h.01"/></svg><div><strong>هذا الإصدار يعمل على نفس الجهاز.</strong><br>بعد الحفظ افتح المنيو من نفس المتصفح حتى تشوف التغييرات. استخدم النسخة الاحتياطية قبل تبديل الجهاز.</div></div>
+    <nav class="tabs" aria-label="أقسام الإدارة">
+      <button class="tab" type="button" data-tab="prices" aria-selected="true">الأسعار الحالية</button>
+      <button class="tab" type="button" data-tab="offers" aria-selected="false">العروض والإضافات</button>
+      <button class="tab" type="button" data-tab="backup" aria-selected="false">النسخ الاحتياطي</button>
+    </nav>
+
+    <section class="panel is-active" id="panel-prices">
+      <div class="section-head"><div><h1>الأسعار الحالية</h1><p>عدّل السعر، أضف خصم، أو أخفِ أي خيار مؤقتاً.</p></div></div>
+      <div class="menu-groups" id="menu-groups"></div>
+    </section>
+
+    <section class="panel" id="panel-offers">
+      <div class="section-head"><div><h1>العروض والإضافات</h1><p>أضف عرضاً جديداً بصورة ورابط، أو عدّل عرضاً محفوظاً.</p></div></div>
+      <div class="offer-layout">
+        <form class="form-surface" id="offer-form">
+          <h2 id="offer-form-title">إضافة عرض جديد</h2>
+          <input type="hidden" id="offer-id">
+          <div class="field"><label for="offer-title">اسم العرض</label><input id="offer-title" maxlength="60" required placeholder="مثال: عرض اللمة"></div>
+          <div class="field-grid">
+            <div class="field"><label for="offer-category">القسم</label><select id="offer-category"><option value="cafe">الكافيه والمطعم</option><option value="ps5">البلي</option><option value="pc">الحاسبات</option><option value="cinema">السينما</option><option value="billiards">البلياردو والسنوكر</option><option value="vr">الواقع الافتراضي</option></select></div>
+            <div class="field"><label for="offer-price">السعر بالدينار</label><input id="offer-price" type="number" min="0" step="250" inputmode="numeric" required></div>
+          </div>
+          <div class="field-grid">
+            <div class="field"><label for="offer-discount">الخصم ٪</label><input id="offer-discount" type="number" min="0" max="100" value="0" inputmode="numeric"></div>
+            <div class="field"><label for="offer-image">رابط الصورة</label><input id="offer-image" type="url" inputmode="url" placeholder="https://..."></div>
+          </div>
+          <div class="field"><label for="offer-description">وصف قصير</label><textarea id="offer-description" maxlength="180" placeholder="شنو يشمل العرض؟"></textarea></div>
+          <div class="field"><label class="switch-wrap"><span>إخفاء العرض مؤقتاً</span><span class="switch"><input id="offer-hidden" type="checkbox"><span class="switch-track"></span></span></label></div>
+          <div class="form-actions"><button class="primary" type="submit" id="save-offer">حفظ العرض</button><button class="secondary hidden" type="button" id="cancel-edit">إلغاء التعديل</button></div>
+        </form>
+        <div class="offer-list-surface">
+          <h2>العروض المحفوظة</h2>
+          <div class="offer-list" id="offer-list"></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="panel" id="panel-backup">
+      <div class="section-head"><div><h1>النسخ الاحتياطي</h1><p>نزّل نسخة من التعديلات أو انقلها إلى جهاز آخر.</p></div></div>
+      <div class="backup-surface">
+        <div class="backup-grid">
+          <div class="backup-box"><h3>تنزيل نسخة</h3><p>يحفظ ملفاً يحتوي الأسعار والعروض الحالية.</p><button class="secondary" id="export-data" type="button">تنزيل الملف</button></div>
+          <div class="backup-box"><h3>استيراد نسخة</h3><p>اختر ملف النسخة حتى ترجع التعديلات المحفوظة.</p><input class="file-input" id="import-data" type="file" accept="application/json"><label class="secondary" for="import-data">اختيار ملف</label></div>
+        </div>
+        <div class="danger-zone"><h3>إرجاع المنيو الأصلي</h3><p>يمسح جميع التعديلات والعروض من هذا الجهاز.</p><button class="danger-button" id="reset-data" type="button">مسح كل التعديلات</button></div>
+      </div>
+    </section>
+  </main>
+
+  <div class="save-bar" id="save-bar"><div class="save-inner"><span class="save-status" id="save-status">كل شيء محفوظ</span><button class="primary" id="save-prices" type="button">حفظ الأسعار</button></div></div>
+</div>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<script>
+(function(){
+  'use strict';
+  var STORAGE_KEY='sound-menu-admin-v1';
+  var SESSION_KEY='sound-admin-session-v1';
+  var PASSWORD_HASH='27384de5933fed35d20373ae25cdccaff1ef8f9aa575810e0607ede45982c598';
+  var categories=[
+    {id:'ps5',title:'البلي',items:[{id:'ps5-hour',name:'الساعة',price:5000},{id:'ps5-four',name:'رباعي',price:8000}]},
+    {id:'pc',title:'الحاسبات',items:[{id:'pc-elite',name:'أيليت',price:2500},{id:'pc-master',name:'الماستر',price:3500}]},
+    {id:'cinema',title:'السينما',items:[{id:'cinema-4',name:'٢ إلى ٤ أشخاص',price:10000},{id:'cinema-10',name:'٢ إلى ١٠ أشخاص',price:30000}]},
+    {id:'billiards',title:'البلياردو والسنوكر',items:[{id:'billiards-zone',name:'البليارد زون',price:6000},{id:'snooker-zone',name:'السنوكر زون',price:15000}]},
+    {id:'vr',title:'الواقع الافتراضي',items:[{id:'vr-hour',name:'الساعة',price:20000}]}
+  ];
+  var categoryNames={cafe:'الكافيه والمطعم',ps5:'البلي',pc:'الحاسبات',cinema:'السينما',billiards:'البلياردو والسنوكر',vr:'الواقع الافتراضي'};
+  var data=readData();
+  var dirty=false;
+  function readData(){
+    try{
+      var parsed=JSON.parse(localStorage.getItem(STORAGE_KEY)||'{}');
+      return normalize(parsed);
+    }catch(e){return normalize({})}
+  }
+  function normalize(value){
+    value=value&&typeof value==='object'?value:{};
+    return {version:1,updatedAt:value.updatedAt||null,items:value.items&&typeof value.items==='object'?value.items:{},offers:Array.isArray(value.offers)?value.offers:[]};
+  }
+  function writeData(){
+    data.updatedAt=new Date().toISOString();
+    localStorage.setItem(STORAGE_KEY,JSON.stringify(data));
+    dirty=false;
+    document.getElementById('save-status').textContent='تم الحفظ الآن';
+    showToast('تم حفظ التغييرات');
+  }
+  function sha256(value){
+    return crypto.subtle.digest('SHA-256',new TextEncoder().encode(value)).then(function(buffer){
+      return Array.from(new Uint8Array(buffer)).map(function(byte){return byte.toString(16).padStart(2,'0')}).join('');
+    });
+  }
+  function showAdmin(){
+    document.getElementById('login-view').classList.add('hidden');
+    document.getElementById('admin-view').classList.remove('hidden');
+    renderItems();
+    renderOffers();
+  }
+  document.getElementById('login-form').addEventListener('submit',function(event){
+    event.preventDefault();
+    var error=document.getElementById('login-error');
+    var button=event.submitter;
+    button.disabled=true;button.textContent='جاري الدخول…';error.textContent='';
+    sha256(document.getElementById('password').value).then(function(hash){
+      if(hash!==PASSWORD_HASH){error.textContent='كلمة المرور غير صحيحة.';return}
+      sessionStorage.setItem(SESSION_KEY,'1');showAdmin();
+    }).finally(function(){button.disabled=false;button.textContent='دخول'});
+  });
+  document.getElementById('toggle-password').addEventListener('click',function(){
+    var input=document.getElementById('password');
+    var visible=input.type==='text';
+    input.type=visible?'password':'text';
+    this.setAttribute('aria-label',visible?'إظهار كلمة المرور':'إخفاء كلمة المرور');
+  });
+  document.getElementById('logout').addEventListener('click',function(){sessionStorage.removeItem(SESSION_KEY);location.reload()});
+  document.querySelectorAll('.tab').forEach(function(tab){
+    tab.addEventListener('click',function(){
+      document.querySelectorAll('.tab').forEach(function(item){item.setAttribute('aria-selected',String(item===tab))});
+      document.querySelectorAll('.panel').forEach(function(panel){panel.classList.toggle('is-active',panel.id==='panel-'+tab.dataset.tab)});
+      document.getElementById('save-bar').classList.toggle('hidden',tab.dataset.tab!=='prices');
+    });
+  });
+  function renderItems(){
+    var root=document.getElementById('menu-groups');
+    root.textContent='';
+    categories.forEach(function(category,index){
+      var details=document.createElement('details');
+      details.className='group';
+      if(index===0)details.open=true;
+      details.innerHTML='<summary>'+category.title+'<svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></summary><div class="group-items"></div>';
+      var list=details.querySelector('.group-items');
+      category.items.forEach(function(item){
+        var saved=data.items[item.id]||{};
+        var row=document.createElement('div');
+        row.className='item-row';
+        row.dataset.itemId=item.id;
+        row.dataset.defaultPrice=String(item.price);
+        row.innerHTML='<div class="item-name"><strong>'+item.name+'</strong><span>السعر الأصلي: '+format(item.price)+' د.ع</span></div><div class="field"><label>السعر الحالي</label><input class="item-price" type="number" min="0" step="250" inputmode="numeric" value="'+Number(saved.price||item.price)+'"></div><div class="field"><label>الخصم ٪</label><input class="item-discount" type="number" min="0" max="100" inputmode="numeric" value="'+Number(saved.discount||0)+'"></div><label class="switch-wrap"><span>إخفاء</span><span class="switch"><input class="item-hidden" type="checkbox" '+(saved.hidden?'checked':'')+'><span class="switch-track"></span></span></label>';
+        row.querySelectorAll('input').forEach(function(input){input.addEventListener('input',markDirty);input.addEventListener('change',markDirty)});
+        list.appendChild(row);
+      });
+      root.appendChild(details);
+    });
+  }
+  function markDirty(){dirty=true;document.getElementById('save-status').textContent='عندك تغييرات غير محفوظة'}
+  document.getElementById('save-prices').addEventListener('click',function(){
+    document.querySelectorAll('.item-row').forEach(function(row){
+      data.items[row.dataset.itemId]={
+        price:Math.max(0,Number(row.querySelector('.item-price').value||row.dataset.defaultPrice)),
+        discount:Math.min(100,Math.max(0,Number(row.querySelector('.item-discount').value||0))),
+        hidden:row.querySelector('.item-hidden').checked
+      };
+    });
+    writeData();
+  });
+  function renderOffers(){
+    var root=document.getElementById('offer-list');
+    root.textContent='';
+    if(!data.offers.length){root.innerHTML='<div class="empty">ماكو عروض مضافة حالياً.<br>أضف أول عرض من النموذج.</div>';return}
+    data.offers.forEach(function(offer){
+      var entry=document.createElement('div');
+      entry.className='offer-entry';
+      entry.innerHTML='<div><h3>'+escapeHtml(offer.title)+'</h3><p>'+categoryNames[offer.category]+' · '+format(offer.price)+' د.ع'+(offer.discount?' · خصم '+format(offer.discount)+'٪':'')+(offer.hidden?' · مخفي':'')+'</p></div><div class="offer-entry-actions"><button type="button" data-edit aria-label="تعديل العرض"><svg viewBox="0 0 24 24" width="19" height="19" fill="none" stroke="currentColor" stroke-width="1.8"><path d="m4 16-.8 4 4-.8L18 8.4 15.6 6 4 16Z"/><path d="m14.8 6.8 2.4 2.4"/></svg></button><button type="button" data-delete aria-label="حذف العرض"><svg viewBox="0 0 24 24" width="19" height="19" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 7h16M9 7V4h6v3M7 7l1 13h8l1-13M10 11v5M14 11v5"/></svg></button></div>';
+      entry.querySelector('[data-edit]').addEventListener('click',function(){loadOffer(offer)});
+      entry.querySelector('[data-delete]').addEventListener('click',function(){
+        if(!confirm('متأكد تريد تحذف هذا العرض؟'))return;
+        data.offers=data.offers.filter(function(item){return item.id!==offer.id});
+        writeData();renderOffers();resetOfferForm();
+      });
+      root.appendChild(entry);
+    });
+  }
+  function loadOffer(offer){
+    document.getElementById('offer-id').value=offer.id;
+    document.getElementById('offer-title').value=offer.title||'';
+    document.getElementById('offer-category').value=offer.category||'cafe';
+    document.getElementById('offer-price').value=Number(offer.price||0);
+    document.getElementById('offer-discount').value=Number(offer.discount||0);
+    document.getElementById('offer-image').value=offer.imageUrl||'';
+    document.getElementById('offer-description').value=offer.description||'';
+    document.getElementById('offer-hidden').checked=!!offer.hidden;
+    document.getElementById('offer-form-title').textContent='تعديل العرض';
+    document.getElementById('save-offer').textContent='حفظ التعديل';
+    document.getElementById('cancel-edit').classList.remove('hidden');
+    document.getElementById('offer-form').scrollIntoView({behavior:'smooth',block:'start'});
+  }
+  function resetOfferForm(){
+    document.getElementById('offer-form').reset();
+    document.getElementById('offer-id').value='';
+    document.getElementById('offer-discount').value='0';
+    document.getElementById('offer-form-title').textContent='إضافة عرض جديد';
+    document.getElementById('save-offer').textContent='حفظ العرض';
+    document.getElementById('cancel-edit').classList.add('hidden');
+  }
+  document.getElementById('cancel-edit').addEventListener('click',resetOfferForm);
+  document.getElementById('offer-form').addEventListener('submit',function(event){
+    event.preventDefault();
+    var id=document.getElementById('offer-id').value||('offer-'+Date.now());
+    var offer={
+      id:id,
+      title:document.getElementById('offer-title').value.trim(),
+      category:document.getElementById('offer-category').value,
+      price:Math.max(0,Number(document.getElementById('offer-price').value||0)),
+      discount:Math.min(100,Math.max(0,Number(document.getElementById('offer-discount').value||0))),
+      imageUrl:document.getElementById('offer-image').value.trim(),
+      description:document.getElementById('offer-description').value.trim(),
+      hidden:document.getElementById('offer-hidden').checked
+    };
+    var index=data.offers.findIndex(function(item){return item.id===id});
+    if(index>=0)data.offers[index]=offer;else data.offers.unshift(offer);
+    writeData();renderOffers();resetOfferForm();
+  });
+  document.getElementById('export-data').addEventListener('click',function(){
+    var blob=new Blob([JSON.stringify(data,null,2)],{type:'application/json'});
+    var url=URL.createObjectURL(blob);
+    var link=document.createElement('a');
+    link.href=url;link.download='sound-menu-backup-'+new Date().toISOString().slice(0,10)+'.json';
+    document.body.appendChild(link);link.click();link.remove();URL.revokeObjectURL(url);
+    showToast('تم تنزيل النسخة الاحتياطية');
+  });
+  document.getElementById('import-data').addEventListener('change',function(){
+    var file=this.files&&this.files[0];
+    if(!file)return;
+    file.text().then(function(text){
+      var imported=normalize(JSON.parse(text));
+      data=imported;writeData();renderItems();renderOffers();showToast('تم استيراد النسخة');
+    }).catch(function(){showToast('الملف غير صالح',true)});
+    this.value='';
+  });
+  document.getElementById('reset-data').addEventListener('click',function(){
+    if(!confirm('راح تنمسح كل الأسعار المعدّلة والعروض من هذا الجهاز. متأكد؟'))return;
+    localStorage.removeItem(STORAGE_KEY);data=normalize({});renderItems();renderOffers();showToast('رجعنا المنيو الأصلي');
+  });
+  function showToast(message,error){
+    var toast=document.getElementById('toast');
+    toast.textContent=message;toast.classList.toggle('is-error',!!error);toast.classList.add('is-visible');
+    clearTimeout(showToast.timer);showToast.timer=setTimeout(function(){toast.classList.remove('is-visible')},2400);
+  }
+  function format(value){return Number(value||0).toLocaleString('ar-IQ')}
+  function escapeHtml(value){return String(value||'').replace(/[&<>"']/g,function(char){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#039;'}[char]})}
+  window.addEventListener('beforeunload',function(event){if(dirty){event.preventDefault();event.returnValue=''}});
+  if(sessionStorage.getItem(SESSION_KEY)==='1')showAdmin();
+})();
+</script>
+</body>
+</html>
