@@ -1,32 +1,19 @@
 (function(){
   'use strict';
-  var KEY='sound-menu-admin-v1';
-  var CATEGORY_LABELS={
-    cafe:{ar:'الكافيه والمطعم',en:'Café & restaurant'},
-    ps5:{ar:'البلي',en:'PlayStation'},
-    pc:{ar:'الحاسبات',en:'Gaming PCs'},
-    cinema:{ar:'السينما',en:'Cinema'},
-    billiards:{ar:'البلياردو والسنوكر',en:'Billiards & snooker'},
-    vr:{ar:'الواقع الافتراضي',en:'Virtual reality'}
-  };
+  var CATEGORY_LABELS={cafe:{ar:'الكافيه والمطعم',en:'Café & restaurant'},ps5:{ar:'البلي',en:'PlayStation'},pc:{ar:'الحاسبات',en:'Gaming PCs'},cinema:{ar:'السينما',en:'Cinema'},billiards:{ar:'البلياردو والسنوكر',en:'Billiards & snooker'},vr:{ar:'الواقع الافتراضي',en:'Virtual reality'}};
+  var latest={version:2,updatedAt:null,items:{},offers:[]};
 
-  function read(){
-    try{
-      var value=JSON.parse(localStorage.getItem(KEY)||'{}');
-      return value&&typeof value==='object'?value:{};
-    }catch(e){return {}}
-  }
   function own(object,key){return Object.prototype.hasOwnProperty.call(object,key)}
   function lang(){return document.documentElement.lang==='en'?'en':'ar'}
   function format(value,language){return Number(value||0).toLocaleString(language==='ar'?'ar-IQ':'en-US')}
-  function priceAfterDiscount(price,discount){
-    return Math.max(0,Math.round(Number(price||0)*(100-Math.min(100,Math.max(0,Number(discount||0))))/100));
-  }
+  function priceAfterDiscount(price,discount){return Math.max(0,Math.round(Number(price||0)*(100-Math.min(100,Math.max(0,Number(discount||0))))/100))}
+  function escapeHtml(value){return String(value||'').replace(/[&<>"']/g,function(char){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#039;'}[char]})}
+  function escapeAttribute(value){return escapeHtml(value).replace(/`/g,'&#096;')}
+
   function applyItemOverrides(data){
     var items=data.items||{};
     document.querySelectorAll('[data-menu-id]').forEach(function(row){
-      var id=row.getAttribute('data-menu-id');
-      var item=items[id]||{};
+      var item=items[row.getAttribute('data-menu-id')]||{};
       var dd=row.querySelector('dd');
       var priceNode=dd&&dd.querySelector('b');
       if(!dd||!priceNode)return;
@@ -58,6 +45,7 @@
       }
     });
   }
+
   function ensureOfferSection(){
     var section=document.getElementById('admin-offers');
     if(section)return section;
@@ -71,6 +59,7 @@
     location.parentNode.insertBefore(section,location);
     return section;
   }
+
   function renderOffers(data){
     var section=ensureOfferSection();
     if(!section)return;
@@ -104,13 +93,24 @@
       grid.appendChild(article);
     });
   }
-  function escapeHtml(value){
-    return String(value||'').replace(/[&<>"']/g,function(char){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#039;'}[char]});
-  }
-  function escapeAttribute(value){return escapeHtml(value).replace(/`/g,'&#096;')}
-  function apply(){var data=read();applyItemOverrides(data);renderOffers(data)}
 
-  apply();
-  window.addEventListener('storage',function(event){if(event.key===KEY)apply()});
-  window.addEventListener('pageshow',apply);
+  function apply(){applyItemOverrides(latest);renderOffers(latest)}
+
+  async function refresh(){
+    try{
+      var response=await fetch('/api/menu',{cache:'no-store'});
+      if(!response.ok)return;
+      var incoming=await response.json();
+      latest=incoming&&typeof incoming==='object'?incoming:latest;
+      apply();
+    }catch(e){}
+  }
+
+  refresh();
+  window.addEventListener('pageshow',refresh);
+  document.addEventListener('visibilitychange',function(){if(!document.hidden)refresh()});
+  setInterval(function(){if(!document.hidden)refresh()},20000);
+  new MutationObserver(function(mutations){
+    if(mutations.some(function(mutation){return mutation.attributeName==='lang'}))apply();
+  }).observe(document.documentElement,{attributes:true,attributeFilter:['lang']});
 })();
