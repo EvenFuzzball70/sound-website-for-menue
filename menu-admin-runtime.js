@@ -105,7 +105,7 @@
     });
   }
   function escapeHtml(value){
-    return String(value||'').replace(/[&<>"']/g,function(char){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot',"'":'&#039;'}[char]});
+    return String(value||'').replace(/[&<>"']/g,function(char){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#039;'}[char]});
   }
   function escapeAttribute(value){return escapeHtml(value).replace(/`/g,'&#096;')}
   function apply(){var data=read();applyItemOverrides(data);renderOffers(data)}
