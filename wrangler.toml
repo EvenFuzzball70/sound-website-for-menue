@@ -1,7 +1,15 @@
 name = "sound-menu"
 main = "./worker.js"
-compatibility_date = "2026-09-14"
+compatibility_date = "2026-09-17"
 
 [assets]
 directory = "."
 binding = "ASSETS"
+
+[[durable_objects.bindings]]
+name = "MENU_STORE"
+class_name = "MenuStore"
+
+[[migrations]]
+tag = "v1"
+new_sqlite_classes = ["MenuStore"]
