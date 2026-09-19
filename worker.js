@@ -1,4 +1,4 @@
-const ADMIN_VERIFIER = "b4d5b91cdde5078a02b89bf38bcdefab665d8e469c0d163c2a612a97b37f98bb";
+const ADMIN_VERIFIER = "8a6c01ea3bfe3976d1d7c5745174ec0e51639a704a8d4b4094c6e76f6b652018";
 const MENU_KEY = "menu-data";
 
 function json(data, status = 200, headers = {}) {
